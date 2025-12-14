@@ -1,5 +1,7 @@
 "use client";
 
+import React from "react";
+
 // Design System Page - Centralized showcase of all UI components, icons, and design patterns
 
 import { useForm } from "react-hook-form";
@@ -42,9 +44,7 @@ import {
   TextareaField,
 } from "@/components/forms";
 import Link from "next/link";
-import { DesignSystemLayout } from "@/components/features/design-system/design-system-layout";
 import { ROUTES } from "@/constants/routes";
-
 // Example form schema for design system
 const exampleFormSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -55,7 +55,7 @@ const exampleFormSchema = z.object({
 
 type ExampleFormData = z.infer<typeof exampleFormSchema>;
 
-export default function DesignSystemPage() {
+export default function OverviewContent() {
   // Example form for demonstration
   const exampleForm = useForm<ExampleFormData>({
     // @ts-expect-error - zodResolver version mismatch, works at runtime
@@ -72,10 +72,8 @@ export default function DesignSystemPage() {
     // Form submission handled here
     alert(`Form submitted with ${Object.keys(data).length} fields!`);
   };
-
   return (
-    <DesignSystemLayout>
-      <div className="space-y-16">
+    <div className="space-y-16">
         {/* Overview Section */}
         <div id="overview" className="scroll-mt-20">
           <div className="space-y-3">
@@ -524,7 +522,6 @@ export default function DesignSystemPage() {
             </div>
           </div>
         </div>
-      </div>
-    </DesignSystemLayout>
+    </div>
   );
 }
