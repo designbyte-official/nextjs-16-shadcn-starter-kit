@@ -45,6 +45,8 @@ import {
 } from "@/components/forms";
 import Link from "next/link";
 import { ROUTES } from "@/constants/routes";
+import { CodePreview } from "@/components/common/code-preview";
+import { Button } from "@/components/ui/button";
 // Example form schema for design system
 const exampleFormSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -228,12 +230,23 @@ export default function OverviewContent() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-4">
-            <Card>
-              <CardHeader>
-                <CardTitle>Button Variants</CardTitle>
-              </CardHeader>
-              <CardContent>
+          <CodePreview
+            code={`import { Button } from "@/components/ui/button";
+
+// Button Variants
+<Button variant="default">Default</Button>
+<Button variant="secondary">Secondary</Button>
+<Button variant="outline">Outline</Button>
+<Button variant="ghost">Ghost</Button>
+<Button variant="link">Link</Button>
+
+// Button Sizes
+<Button size="sm">Small</Button>
+<Button size="default">Default</Button>
+<Button size="lg">Large</Button>`}
+            language="tsx"
+            preview={
+              <div className="space-y-4">
                 <div className="flex gap-4 flex-wrap">
                   <Button variant="default">Default</Button>
                   <Button variant="secondary">Secondary</Button>
@@ -241,22 +254,14 @@ export default function OverviewContent() {
                   <Button variant="ghost">Ghost</Button>
                   <Button variant="link">Link</Button>
                 </div>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>Button Sizes</CardTitle>
-              </CardHeader>
-              <CardContent>
                 <div className="flex gap-4 items-center flex-wrap">
                   <Button size="sm">Small</Button>
                   <Button size="default">Default</Button>
                   <Button size="lg">Large</Button>
                 </div>
-              </CardContent>
-            </Card>
-          </div>
+              </div>
+            }
+          />
         </div>
 
         <Separator className="my-12" />

@@ -89,7 +89,7 @@ export function MarkdownRenderer({ content, className }: MarkdownRendererProps) 
           ),
           pre: ({ children, ...props }: any) => {
             return (
-              <pre className="bg-muted border border-border rounded-lg overflow-x-auto my-4 p-4" {...props}>
+              <pre className="bg-muted border border-border rounded-lg overflow-x-auto my-4 p-4 font-mono text-sm" {...props}>
                 {children}
               </pre>
             );

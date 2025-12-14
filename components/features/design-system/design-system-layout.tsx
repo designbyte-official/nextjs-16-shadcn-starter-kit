@@ -88,11 +88,9 @@ export function DesignSystemLayout({ children }: DesignSystemLayoutProps) {
             </div>
           </div>
 
-          {/* Sidebar Navigation - Scrollable with proper padding */}
-          <div className="flex-1 overflow-y-auto overscroll-contain flex flex-col">
-            <div className="flex-1 p-4">
-              <DesignSystemSidebar searchQuery={searchQuery} />
-            </div>
+          {/* Sidebar Navigation - Scrollable content with fixed bottom */}
+          <div className="flex-1 flex flex-col overflow-hidden p-3">
+            <DesignSystemSidebar searchQuery={searchQuery} />
           </div>
         </aside>
 

@@ -13,6 +13,7 @@ export { IconWrapper } from "./icon-wrapper";
 export { Icon } from "./icon";
 export { MarkdownRenderer } from "./markdown-renderer";
 export { CodeBlockWrapper } from "./code-block-wrapper";
+export { CodePreview } from "./code-preview";
 
 export type { ContainerProps } from "./container";
 export type { SectionProps } from "./section";

@@ -31,9 +31,29 @@ import { Container } from "@/components/common/container";
 ## Example
 
 ```tsx
+import { Container } from "@/components/common/container";
+
 <Container size="lg" className="py-8">
   <h1>Page Title</h1>
   <p>Content goes here</p>
 </Container>
 ```
+
+## Live Preview
+
+<CodePreview
+  code={`import { Container } from "@/components/common/container";
+
+<Container size="lg" className="py-8">
+  <h1>Page Title</h1>
+  <p>Content goes here</p>
+</Container>`}
+  language="tsx"
+  preview={
+    <Container size="lg" className="py-8">
+      <h1>Page Title</h1>
+      <p>Content goes here</p>
+    </Container>
+  }
+/>
 

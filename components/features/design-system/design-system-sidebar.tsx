@@ -86,8 +86,8 @@ export function DesignSystemSidebar({ searchQuery = "" }: DesignSystemSidebarPro
 
   return (
     <div className="flex flex-col h-full">
-      <nav className="flex-1 space-y-0.5">
-        {/* Navigation items */}
+      {/* Scrollable navigation content */}
+      <nav className="flex-1 overflow-y-auto space-y-0.5">
         {filteredItems.length > 0 ? (
           filteredItems.map((item, index) => {
             const isActive = activeSection === item.id;
@@ -121,8 +121,8 @@ export function DesignSystemSidebar({ searchQuery = "" }: DesignSystemSidebarPro
         )}
       </nav>
       
-      {/* Bottom section with border and home link - full width border */}
-      <div className="mt-auto -mx-4 px-4 pt-4 border-t border-border">
+      {/* Fixed bottom section with border and home link */}
+      <div className="flex-shrink-0 border-t border-border pt-3 pb-3">
         <Link
           href="/"
           className={cn(
