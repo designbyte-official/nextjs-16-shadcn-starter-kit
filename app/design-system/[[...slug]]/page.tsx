@@ -10,11 +10,31 @@ interface DesignSystemPageProps {
 
 // Map slug to markdown file
 const slugToMarkdown: Record<string, string> = {
-  icons: "icons", // We'll create this markdown
-  buttons: "buttons", // We'll create this markdown
+  // Foundations
+  icons: "icons",
+  buttons: "buttons",
+  badges: "badges",
+  
+  // Common Components
   "common-components": "common-components",
+  container: "container",
+  section: "section",
+  "page-header": "page-header",
+  "empty-state": "empty-state",
+  "icon-wrapper": "icon-wrapper",
+  "card-wrapper": "card-wrapper",
+  "adaptive-wrapper": "adaptive-wrapper",
+  "loading-spinner": "loading-spinner",
+  "error-message": "error-message",
+  "success-message": "success-message",
+  
+  // Forms
   forms: "forms",
-  badges: "badges", // We'll create this markdown
+  form: "form",
+  "form-field": "form-field",
+  "input-field": "input-field",
+  "textarea-field": "textarea-field",
+  "select-field": "select-field",
 };
 
 async function getDesignSystemContent(slug: string): Promise<string | null> {

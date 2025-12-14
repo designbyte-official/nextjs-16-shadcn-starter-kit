@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { cn } from "@/utils/common/class-names";
@@ -10,15 +10,43 @@ interface SidebarItem {
   label: string;
   href: string;
   keywords?: string[];
+  indent?: boolean; // For sub-items
+  separator?: boolean; // For visual separators
 }
 
 const sidebarItems: SidebarItem[] = [
+  // Overview
   { id: "overview", label: "Overview", href: "/design-system", keywords: ["overview", "introduction", "getting started"] },
+  
+  // Foundations
   { id: "icons", label: "Icons", href: "/design-system/icons", keywords: ["icons", "symbols", "images"] },
   { id: "buttons", label: "Buttons", href: "/design-system/buttons", keywords: ["buttons", "actions", "click"] },
-  { id: "common-components", label: "Common Components", href: "/design-system/common-components", keywords: ["common", "shared", "reusable", "components"] },
-  { id: "forms", label: "Forms", href: "/design-system/forms", keywords: ["forms", "inputs", "fields", "validation"] },
   { id: "badges", label: "Badges", href: "/design-system/badges", keywords: ["badges", "labels", "tags"] },
+  
+  // Common Components - Overview
+  { id: "common-components", label: "Common Components", href: "/design-system/common-components", keywords: ["common", "shared", "reusable", "components"], separator: true },
+  
+  // Common Components - Individual
+  { id: "container", label: "Container", href: "/design-system/container", keywords: ["container", "wrapper", "layout"], indent: true },
+  { id: "section", label: "Section", href: "/design-system/section", keywords: ["section", "spacing", "layout"], indent: true },
+  { id: "page-header", label: "PageHeader", href: "/design-system/page-header", keywords: ["header", "title", "page"], indent: true },
+  { id: "empty-state", label: "EmptyState", href: "/design-system/empty-state", keywords: ["empty", "state", "no data"], indent: true },
+  { id: "icon-wrapper", label: "IconWrapper", href: "/design-system/icon-wrapper", keywords: ["icon", "wrapper", "sizing"], indent: true },
+  { id: "card-wrapper", label: "CardWrapper", href: "/design-system/card-wrapper", keywords: ["card", "wrapper", "layout"], indent: true },
+  { id: "adaptive-wrapper", label: "AdaptiveWrapper", href: "/design-system/adaptive-wrapper", keywords: ["adaptive", "responsive", "mobile"], indent: true },
+  { id: "loading-spinner", label: "LoadingSpinner", href: "/design-system/loading-spinner", keywords: ["loading", "spinner", "loader"], indent: true },
+  { id: "error-message", label: "ErrorMessage", href: "/design-system/error-message", keywords: ["error", "message", "alert"], indent: true },
+  { id: "success-message", label: "SuccessMessage", href: "/design-system/success-message", keywords: ["success", "message", "alert"], indent: true },
+  
+  // Forms - Overview
+  { id: "forms", label: "Forms", href: "/design-system/forms", keywords: ["forms", "inputs", "fields", "validation"], separator: true },
+  
+  // Forms - Individual
+  { id: "form", label: "Form", href: "/design-system/form", keywords: ["form", "wrapper", "react-hook-form"], indent: true },
+  { id: "form-field", label: "FormField", href: "/design-system/form-field", keywords: ["form", "field", "base"], indent: true },
+  { id: "input-field", label: "InputField", href: "/design-system/input-field", keywords: ["input", "text", "field"], indent: true },
+  { id: "textarea-field", label: "TextareaField", href: "/design-system/textarea-field", keywords: ["textarea", "multiline", "field"], indent: true },
+  { id: "select-field", label: "SelectField", href: "/design-system/select-field", keywords: ["select", "dropdown", "field"], indent: true },
 ];
 
 interface DesignSystemSidebarProps {
@@ -61,22 +89,29 @@ export function DesignSystemSidebar({ searchQuery = "" }: DesignSystemSidebarPro
       <nav className="flex-1 space-y-0.5">
         {/* Navigation items */}
         {filteredItems.length > 0 ? (
-          filteredItems.map((item) => {
+          filteredItems.map((item, index) => {
             const isActive = activeSection === item.id;
+            const showSeparator = item.separator && index > 0;
+            
             return (
-              <Link
-                key={item.id}
-                href={item.href}
-                onClick={(e) => handleClick(e, item.href)}
-                className={cn(
-                  "block px-3 py-2 text-sm rounded-md transition-colors",
-                  isActive
-                    ? "bg-primary text-primary-foreground font-medium"
-                    : "text-muted-foreground hover:bg-muted hover:text-foreground"
+              <React.Fragment key={item.id}>
+                {showSeparator && (
+                  <div className="my-2 border-t border-border" />
                 )}
-              >
-                {item.label}
-              </Link>
+                <Link
+                  href={item.href}
+                  onClick={(e) => handleClick(e, item.href)}
+                  className={cn(
+                    "block px-3 py-2 text-sm rounded-md transition-colors",
+                    item.indent && "pl-6",
+                    isActive
+                      ? "bg-primary text-primary-foreground font-medium"
+                      : "text-muted-foreground hover:bg-muted hover:text-foreground"
+                  )}
+                >
+                  {item.label}
+                </Link>
+              </React.Fragment>
             );
           })
         ) : (
