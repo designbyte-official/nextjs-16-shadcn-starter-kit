@@ -8,6 +8,7 @@ import Link from "next/link";
 import { ROUTES } from "@/constants/routes";
 import { readFile } from "fs/promises";
 import { join } from "path";
+import { EmptyStateExample } from "./empty-state-example";
 
 async function getCommonComponentsDoc(): Promise<string> {
   try {
@@ -176,14 +177,7 @@ export default async function CommonComponentsDocsPage() {
                 </div>
                 <div>
                   <h4 className="font-semibold mb-2">Live Example</h4>
-                  <EmptyState
-                    title="No items found"
-                    description="Get started by creating your first item"
-                    action={{
-                      label: "Create Item",
-                      onClick: () => alert("Create clicked"),
-                    }}
-                  />
+                  <EmptyStateExample />
                 </div>
               </div>
             </CardContent>
