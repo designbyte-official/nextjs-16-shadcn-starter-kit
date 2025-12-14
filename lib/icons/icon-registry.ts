@@ -132,14 +132,19 @@ export {
 
 // Hero Icons - Import and re-export with Hero prefix
 import {
+  BanknotesIcon,
   BellIcon,
+  BriefcaseIcon,
+  ChatBubbleLeftRightIcon,
   CheckIcon,
   ChevronDownIcon,
   ChevronLeftIcon,
   ChevronRightIcon,
   ChevronUpIcon,
+  CodeBracketIcon,
   Cog6ToothIcon,
   ComputerDesktopIcon,
+  DocumentTextIcon,
   EyeSlashIcon,
   ArrowLeftIcon as HeroArrowLeftIconBase,
   ArrowRightIcon as HeroArrowRightIconBase,
@@ -153,7 +158,9 @@ import {
   MagnifyingGlassIcon,
   PencilIcon,
   PlusIcon,
+  SparklesIcon,
   TrashIcon,
+  UserGroupIcon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
 
@@ -182,6 +189,25 @@ export {
   HeroSunIconBase as HeroSunIcon,
   HeroMoonIconBase as HeroMoonIcon,
   ComputerDesktopIcon as HeroComputerIcon,
+  ChatBubbleLeftRightIcon as HeroQuoteIcon,
+  BriefcaseIcon as HeroBriefcaseIcon,
+  CodeBracketIcon as HeroCodeIcon,
+  UserGroupIcon as HeroUsersIcon,
+  BanknotesIcon as HeroBanknoteIcon,
+  DocumentTextIcon as HeroFileTextIcon,
+  SparklesIcon as HeroSparklesIcon,
+};
+
+// Export without Hero prefix for convenience (use in components)
+export {
+  PencilIcon as PenIcon,
+  SparklesIcon,
+  BriefcaseIcon,
+  CodeBracketIcon as CodeIcon,
+  UserGroupIcon as UsersIcon,
+  BanknotesIcon as BanknoteIcon,
+  DocumentTextIcon as FileTextIcon,
+  ChatBubbleLeftRightIcon as QuoteIcon,
 };
 
 // Type exports for icon usage

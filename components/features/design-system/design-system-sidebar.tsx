@@ -70,7 +70,24 @@ export function DesignSystemSidebar({ searchQuery = "" }: DesignSystemSidebarPro
 
   useEffect(() => {
     // Set active section based on current pathname
-    const currentSection = sidebarItems.find((item) => item.href === pathname)?.id || "overview";
+    // Handle both exact matches and pathname starts with href
+    let currentSection = "overview";
+    
+    // First try exact match
+    const exactMatch = sidebarItems.find((item) => item.href === pathname);
+    if (exactMatch) {
+      currentSection = exactMatch.id;
+    } else {
+      // Try to find the best match (longest matching href)
+      const matches = sidebarItems
+        .filter((item) => pathname.startsWith(item.href))
+        .sort((a, b) => b.href.length - a.href.length);
+      
+      if (matches.length > 0) {
+        currentSection = matches[0].id;
+      }
+    }
+    
     requestAnimationFrame(() => {
       setActiveSection(currentSection);
     });

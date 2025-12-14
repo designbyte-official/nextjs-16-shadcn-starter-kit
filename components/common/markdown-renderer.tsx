@@ -7,6 +7,8 @@ import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeHighlight from "rehype-highlight";
 import "highlight.js/styles/github-dark.css";
+import { CodePreview } from "./code-preview";
+import { getPreviewComponent } from "./preview-registry";
 
 interface MarkdownRendererProps {
   content: string;
@@ -88,6 +90,65 @@ export function MarkdownRenderer({ content, className }: MarkdownRendererProps) 
             <em className="italic text-foreground/90" {...props} />
           ),
           pre: ({ children, ...props }: any) => {
+            // Check if this is a code block with preview
+            const codeElement = React.Children.toArray(children).find(
+              (child: any) => child?.type === "code"
+            ) as any;
+            
+            if (codeElement?.props?.className) {
+              const className = codeElement.props.className;
+              const languageMatch = className.match(/language-([^:]+)(:preview)?/);
+              
+              if (languageMatch && languageMatch[2] === ":preview") {
+                // This is a preview code block
+                const language = languageMatch[1];
+                const code = String(codeElement.props.children || "").trim();
+                
+                // Try to render a preview from the code
+                let preview: React.ReactNode = null;
+                
+                // Simple JSX parser for common patterns
+                if (language === "tsx" || language === "jsx") {
+                  // Try to extract component usage and render it
+                  const jsxMatch = code.match(/<(\w+)([^>]*)>([\s\S]*?)<\/\1>/);
+                  if (jsxMatch) {
+                    const componentName = jsxMatch[1];
+                    const Component = getPreviewComponent(componentName);
+                    
+                    if (Component) {
+                      // Parse props (simple implementation)
+                      const propsString = jsxMatch[2];
+                      const props: Record<string, any> = {};
+                      
+                      // Extract props like variant="default" or size="lg"
+                      const propMatches = propsString.matchAll(/(\w+)=["']([^"']+)["']/g);
+                      for (const match of propMatches) {
+                        props[match[1]] = match[2];
+                      }
+                      
+                      // Extract children
+                      const childrenText = jsxMatch[3]?.trim();
+                      if (childrenText) {
+                        props.children = childrenText;
+                      }
+                      
+                      preview = <Component {...props} />;
+                    }
+                  }
+                }
+                
+                return (
+                  <CodePreview 
+                    code={code} 
+                    language={language}
+                    preview={preview || undefined}
+                    className="my-4"
+                  />
+                );
+              }
+            }
+            
+            // Regular code block
             return (
               <pre className="bg-muted border border-border rounded-lg overflow-x-auto my-4 p-4 font-mono text-sm" {...props}>
                 {children}
