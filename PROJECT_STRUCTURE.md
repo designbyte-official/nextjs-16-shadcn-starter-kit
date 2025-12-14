@@ -150,6 +150,7 @@ components/
 ```
 
 **Component Organization**:
+
 - `ui/`: Base UI components from shadcn/ui
 - `features/`: Feature-specific components organized by domain
 - `layouts/`: Page layout components
@@ -278,7 +279,7 @@ public/
 ### Files and Folders
 
 - **kebab-case** for all files and folders: `login-form.tsx`, `use-auth.ts`, `api-client.ts`
-- **Exceptions**: 
+- **Exceptions**:
   - Next.js special files: `layout.tsx`, `page.tsx`, `loading.tsx`, `error.tsx`, `not-found.tsx`, `route.ts`
   - Config files: `package.json`, `tsconfig.json`, `next.config.ts`
 
@@ -356,6 +357,7 @@ Many directories use a `common/` subfolder for shared utilities:
 - `config/common/` - Common configuration
 
 This pattern allows for:
+
 - Shared code across different domains
 - Consistent patterns and utilities
 - Easy discovery of reusable code
@@ -378,4 +380,3 @@ This pattern allows for:
 
 - See `AI_REFERENCE.md` for AI assistant guidelines
 - See `README.md` for setup and development instructions
-

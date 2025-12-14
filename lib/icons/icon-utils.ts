@@ -42,4 +42,3 @@ export function getIconClassName(
 
   return cn(className);
 }
-

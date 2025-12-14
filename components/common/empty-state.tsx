@@ -34,10 +34,7 @@ export function EmptyState({
       {description && (
         <p className="text-muted-foreground mb-4 max-w-md">{description}</p>
       )}
-      {action && (
-        <Button onClick={action.onClick}>{action.label}</Button>
-      )}
+      {action && <Button onClick={action.onClick}>{action.label}</Button>}
     </div>
   );
 }
-

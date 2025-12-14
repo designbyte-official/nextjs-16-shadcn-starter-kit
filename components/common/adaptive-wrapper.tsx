@@ -1,7 +1,6 @@
 "use client";
 
 import { ReactNode } from "react";
-import { cn } from "@/utils/common/class-names";
 import { useMediaQuery } from "@/hooks/use-media-query";
 
 export interface AdaptiveWrapperProps {
@@ -51,4 +50,3 @@ export function AdaptiveWrapper({
 
   return <div className={className}>{children}</div>;
 }
-

@@ -9,7 +9,7 @@ export function Header() {
         <Link href={ROUTES.HOME} className="text-xl font-bold">
           DSA Platform
         </Link>
-        
+
         <nav className="hidden md:flex items-center gap-6">
           <Link href={ROUTES.FEATURES} className="text-sm hover:underline">
             Features
@@ -24,7 +24,7 @@ export function Header() {
             About
           </Link>
         </nav>
-        
+
         <div className="flex items-center gap-4">
           <Link href={ROUTES.LOGIN}>
             <Button variant="ghost" size="sm">
@@ -32,13 +32,10 @@ export function Header() {
             </Button>
           </Link>
           <Link href={ROUTES.REGISTER}>
-            <Button size="sm">
-              Sign Up
-            </Button>
+            <Button size="sm">Sign Up</Button>
           </Link>
         </div>
       </div>
     </header>
   );
 }
-

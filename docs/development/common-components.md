@@ -13,19 +13,22 @@ Common components are located in `components/common/` and provide consistent, re
 Responsive container component with preset sizes.
 
 **Props:**
+
 - `size` - Container size: "sm" | "md" | "lg" | "xl" | "full" (default: "xl")
 - `className` - Additional CSS classes
 
 **Usage:**
+
 ```tsx
 import { Container } from "@/components/common";
 
 <Container size="lg">
   <YourContent />
-</Container>
+</Container>;
 ```
 
 **Sizes:**
+
 - `sm`: max-w-2xl
 - `md`: max-w-4xl
 - `lg`: max-w-6xl
@@ -37,18 +40,20 @@ import { Container } from "@/components/common";
 Page section with consistent spacing and container.
 
 **Props:**
+
 - `spacing` - Vertical spacing: "none" | "sm" | "md" | "lg" | "xl" (default: "md")
 - `containerSize` - Container size (default: "xl")
 - `className` - Additional CSS classes
 
 **Usage:**
+
 ```tsx
 import { Section } from "@/components/common";
 
 <Section spacing="lg" containerSize="lg">
   <h2>Section Title</h2>
   <p>Section content</p>
-</Section>
+</Section>;
 ```
 
 ### AdaptiveWrapper
@@ -56,6 +61,7 @@ import { Section } from "@/components/common";
 Component that renders different content based on screen size.
 
 **Props:**
+
 - `mobile` - Content for mobile screens
 - `tablet` - Content for tablet screens
 - `desktop` - Content for desktop screens
@@ -63,6 +69,7 @@ Component that renders different content based on screen size.
 - `breakpoints` - Custom breakpoint queries
 
 **Usage:**
+
 ```tsx
 import { AdaptiveWrapper } from "@/components/common";
 
@@ -70,7 +77,7 @@ import { AdaptiveWrapper } from "@/components/common";
   mobile={<MobileView />}
   tablet={<TabletView />}
   desktop={<DesktopView />}
-/>
+/>;
 ```
 
 ### PageHeader
@@ -78,12 +85,14 @@ import { AdaptiveWrapper } from "@/components/common";
 Consistent page header with title, description, and actions.
 
 **Props:**
+
 - `title` - Page title (required)
 - `description` - Optional description text
 - `actions` - Optional action buttons/elements
 - `className` - Additional CSS classes
 
 **Usage:**
+
 ```tsx
 import { PageHeader } from "@/components/common";
 import { Button } from "@/components/ui/button";
@@ -92,7 +101,7 @@ import { Button } from "@/components/ui/button";
   title="Dashboard"
   description="Welcome back!"
   actions={<Button>New Item</Button>}
-/>
+/>;
 ```
 
 ### CardWrapper
@@ -100,6 +109,7 @@ import { Button } from "@/components/ui/button";
 Wrapper for Card component with consistent structure.
 
 **Props:**
+
 - `title` - Card title
 - `description` - Card description
 - `children` - Card content
@@ -107,6 +117,7 @@ Wrapper for Card component with consistent structure.
 - `className` - Additional CSS classes
 
 **Usage:**
+
 ```tsx
 import { CardWrapper } from "@/components/common";
 
@@ -116,7 +127,7 @@ import { CardWrapper } from "@/components/common";
   footer={<Button>Action</Button>}
 >
   <p>Card content</p>
-</CardWrapper>
+</CardWrapper>;
 ```
 
 ### EmptyState
@@ -124,6 +135,7 @@ import { CardWrapper } from "@/components/common";
 Component for displaying empty states.
 
 **Props:**
+
 - `title` - Empty state title (required)
 - `description` - Optional description
 - `icon` - Optional icon element
@@ -131,6 +143,7 @@ Component for displaying empty states.
 - `className` - Additional CSS classes
 
 **Usage:**
+
 ```tsx
 import { EmptyState } from "@/components/common";
 
@@ -142,7 +155,7 @@ import { EmptyState } from "@/components/common";
     label: "Create Item",
     onClick: handleCreate,
   }}
-/>
+/>;
 ```
 
 ### LoadingSpinner
@@ -150,13 +163,15 @@ import { EmptyState } from "@/components/common";
 Loading spinner component.
 
 **Props:**
+
 - `size` - Spinner size: "sm" | "md" | "lg" (default: "md")
 
 **Usage:**
+
 ```tsx
 import { LoadingSpinner } from "@/components/common";
 
-<LoadingSpinner size="lg" />
+<LoadingSpinner size="lg" />;
 ```
 
 ### ErrorMessage
@@ -164,14 +179,16 @@ import { LoadingSpinner } from "@/components/common";
 Error message component.
 
 **Props:**
+
 - `message` - Error message text (required)
 - `className` - Additional CSS classes
 
 **Usage:**
+
 ```tsx
 import { ErrorMessage } from "@/components/common";
 
-<ErrorMessage message="Something went wrong" />
+<ErrorMessage message="Something went wrong" />;
 ```
 
 ### SuccessMessage
@@ -179,14 +196,16 @@ import { ErrorMessage } from "@/components/common";
 Success message component.
 
 **Props:**
+
 - `message` - Success message text (required)
 - `className` - Additional CSS classes
 
 **Usage:**
+
 ```tsx
 import { SuccessMessage } from "@/components/common";
 
-<SuccessMessage message="Operation successful" />
+<SuccessMessage message="Operation successful" />;
 ```
 
 ## Component Combinations
@@ -194,6 +213,7 @@ import { SuccessMessage } from "@/components/common";
 ### Common Patterns
 
 **Page Layout:**
+
 ```tsx
 import { Container, Section, PageHeader } from "@/components/common";
 
@@ -203,30 +223,28 @@ import { Container, Section, PageHeader } from "@/components/common";
     description="Page description"
     actions={<Button>Action</Button>}
   />
-  
+
   <Section spacing="md">
     <YourContent />
   </Section>
-</Container>
+</Container>;
 ```
 
 **Card Grid:**
+
 ```tsx
 import { CardWrapper, Container } from "@/components/common";
 
 <Container>
   <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-    <CardWrapper title="Card 1">
-      Content 1
-    </CardWrapper>
-    <CardWrapper title="Card 2">
-      Content 2
-    </CardWrapper>
+    <CardWrapper title="Card 1">Content 1</CardWrapper>
+    <CardWrapper title="Card 2">Content 2</CardWrapper>
   </div>
-</Container>
+</Container>;
 ```
 
 **Empty State:**
+
 ```tsx
 import { EmptyState, Container } from "@/components/common";
 
@@ -243,7 +261,7 @@ import { EmptyState, Container } from "@/components/common";
   ) : (
     <ItemList items={items} />
   )}
-</Container>
+</Container>;
 ```
 
 ## Best Practices
@@ -275,4 +293,3 @@ import {
 
 **Last Updated**: Common components setup
 **Maintained By**: Development Team
-

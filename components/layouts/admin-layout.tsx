@@ -1,5 +1,4 @@
 import { ReactNode } from "react";
-import { Sidebar } from "@/components/shared/sidebar";
 
 export function AdminLayout({ children }: { children: ReactNode }) {
   return (
@@ -37,13 +36,10 @@ export function AdminLayout({ children }: { children: ReactNode }) {
             </a>
           </nav>
         </aside>
-        
+
         {/* Main Content */}
-        <main className="flex-1 p-8">
-          {children}
-        </main>
+        <main className="flex-1 p-8">{children}</main>
       </div>
     </div>
   );
 }
-

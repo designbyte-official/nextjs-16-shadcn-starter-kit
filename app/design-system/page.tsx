@@ -6,34 +6,43 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { IconWrapper } from "@/components/common/icon-wrapper";
 import {
-  Home01Icon,
-  SearchIcon,
-  UserIcon,
-  SettingsIcon,
-  SunIcon,
-  MoonIcon,
   HeroHomeIcon,
   HeroSearchIcon,
   HeroUserIcon,
+  Home01Icon,
+  MoonIcon,
+  SearchIcon,
+  SettingsIcon,
+  SunIcon,
+  UserIcon,
 } from "@/lib/icons";
 import {
-  Container,
-  Section,
-  PageHeader,
   CardWrapper,
+  Container,
   EmptyState,
-  LoadingSpinner,
   ErrorMessage,
+  LoadingSpinner,
+  PageHeader,
+  Section,
   SuccessMessage,
 } from "@/components/common";
-import { Form, InputField, TextareaField, SelectField } from "@/components/forms";
+import {
+  Form,
+  InputField,
+  SelectField,
+  TextareaField,
+} from "@/components/forms";
 
 // Example form schema for design system
 const exampleFormSchema = z.object({
@@ -58,8 +67,8 @@ export default function DesignSystemPage() {
   });
 
   const handleExampleSubmit = (data: ExampleFormData) => {
-    console.log("Form submitted:", data);
-    alert("Form submitted! Check console.");
+    // Form submission handled here
+    alert(`Form submitted with ${Object.keys(data).length} fields!`);
   };
 
   return (
@@ -69,7 +78,8 @@ export default function DesignSystemPage() {
         <div className="mb-12">
           <h1 className="text-4xl font-bold mb-2">Design System</h1>
           <p className="text-muted-foreground text-lg">
-            Complete showcase of UI components, icons, and design patterns for the DSA Learning Platform.
+            Complete showcase of UI components, icons, and design patterns for
+            the DSA Learning Platform.
           </p>
         </div>
 
@@ -78,7 +88,8 @@ export default function DesignSystemPage() {
           <div className="mb-6">
             <h2 className="text-2xl font-semibold mb-2">Icons</h2>
             <p className="text-muted-foreground">
-              Icon library using Huge Icons (primary) and Hero Icons (secondary).
+              Icon library using Huge Icons (primary) and Hero Icons
+              (secondary).
             </p>
           </div>
 
@@ -87,7 +98,8 @@ export default function DesignSystemPage() {
               <CardHeader>
                 <CardTitle>Huge Icons - Direct Usage</CardTitle>
                 <CardDescription>
-                  Icons imported directly from the icon registry with custom sizes and colors.
+                  Icons imported directly from the icon registry with custom
+                  sizes and colors.
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -106,16 +118,37 @@ export default function DesignSystemPage() {
               <CardHeader>
                 <CardTitle>Huge Icons - With IconWrapper</CardTitle>
                 <CardDescription>
-                  Using IconWrapper for consistent sizing with preset size options.
+                  Using IconWrapper for consistent sizing with preset size
+                  options.
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="flex gap-4 items-center flex-wrap">
-                  <IconWrapper icon={Home01Icon} size="xs" className="text-blue-500" />
-                  <IconWrapper icon={SearchIcon} size="sm" className="text-green-500" />
-                  <IconWrapper icon={UserIcon} size="md" className="text-purple-500" />
-                  <IconWrapper icon={SettingsIcon} size="lg" className="text-orange-500" />
-                  <IconWrapper icon={SunIcon} size="xl" className="text-yellow-500" />
+                  <IconWrapper
+                    icon={Home01Icon}
+                    size="xs"
+                    className="text-blue-500"
+                  />
+                  <IconWrapper
+                    icon={SearchIcon}
+                    size="sm"
+                    className="text-green-500"
+                  />
+                  <IconWrapper
+                    icon={UserIcon}
+                    size="md"
+                    className="text-purple-500"
+                  />
+                  <IconWrapper
+                    icon={SettingsIcon}
+                    size="lg"
+                    className="text-orange-500"
+                  />
+                  <IconWrapper
+                    icon={SunIcon}
+                    size="xl"
+                    className="text-yellow-500"
+                  />
                 </div>
               </CardContent>
             </Card>
@@ -124,7 +157,7 @@ export default function DesignSystemPage() {
               <CardHeader>
                 <CardTitle>Hero Icons</CardTitle>
                 <CardDescription>
-                  Alternative icon library with "Hero" prefix.
+                  Alternative icon library with &quot;Hero&quot; prefix.
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -140,30 +173,41 @@ export default function DesignSystemPage() {
               <CardHeader>
                 <CardTitle>Icon Sizes</CardTitle>
                 <CardDescription>
-                  Available preset sizes: xs (16px), sm (20px), md (24px), lg (32px), xl (40px)
+                  Available preset sizes: xs (16px), sm (20px), md (24px), lg
+                  (32px), xl (40px)
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="flex gap-6 items-end">
                   <div className="flex flex-col items-center gap-2">
                     <Home01Icon size={16} />
-                    <span className="text-xs text-muted-foreground">xs (16px)</span>
+                    <span className="text-xs text-muted-foreground">
+                      xs (16px)
+                    </span>
                   </div>
                   <div className="flex flex-col items-center gap-2">
                     <Home01Icon size={20} />
-                    <span className="text-xs text-muted-foreground">sm (20px)</span>
+                    <span className="text-xs text-muted-foreground">
+                      sm (20px)
+                    </span>
                   </div>
                   <div className="flex flex-col items-center gap-2">
                     <Home01Icon size={24} />
-                    <span className="text-xs text-muted-foreground">md (24px)</span>
+                    <span className="text-xs text-muted-foreground">
+                      md (24px)
+                    </span>
                   </div>
                   <div className="flex flex-col items-center gap-2">
                     <Home01Icon size={32} />
-                    <span className="text-xs text-muted-foreground">lg (32px)</span>
+                    <span className="text-xs text-muted-foreground">
+                      lg (32px)
+                    </span>
                   </div>
                   <div className="flex flex-col items-center gap-2">
                     <Home01Icon size={40} />
-                    <span className="text-xs text-muted-foreground">xl (40px)</span>
+                    <span className="text-xs text-muted-foreground">
+                      xl (40px)
+                    </span>
                   </div>
                 </div>
               </CardContent>
@@ -250,7 +294,8 @@ export default function DesignSystemPage() {
               </CardHeader>
               <CardContent>
                 <div className="border rounded p-4">
-                  Section component provides consistent spacing and container wrapper
+                  Section component provides consistent spacing and container
+                  wrapper
                 </div>
               </CardContent>
             </Card>
@@ -355,11 +400,16 @@ export default function DesignSystemPage() {
           <div className="mb-6">
             <h2 className="text-2xl font-semibold mb-2">Form Components</h2>
             <p className="text-muted-foreground mb-2">
-              Reusable form components with react-hook-form integration.
-              All form fields include labels, error handling, and validation automatically.
+              Reusable form components with react-hook-form integration. All
+              form fields include labels, error handling, and validation
+              automatically.
             </p>
             <p className="text-sm text-muted-foreground">
-              See <code className="text-xs bg-muted px-1 py-0.5 rounded">components/forms/FORMS.md</code> for full documentation.
+              See{" "}
+              <code className="text-xs bg-muted px-1 py-0.5 rounded">
+                components/forms/FORMS.md
+              </code>{" "}
+              for full documentation.
             </p>
           </div>
 
@@ -367,7 +417,8 @@ export default function DesignSystemPage() {
             <CardHeader>
               <CardTitle>Complete Form Example</CardTitle>
               <CardDescription>
-                Example form using InputField, SelectField, and TextareaField components
+                Example form using InputField, SelectField, and TextareaField
+                components
               </CardDescription>
             </CardHeader>
             <CardContent>
@@ -379,7 +430,7 @@ export default function DesignSystemPage() {
                     required
                     placeholder="Enter your name"
                   />
-                  
+
                   <InputField
                     name="email"
                     label="Email"
@@ -387,7 +438,7 @@ export default function DesignSystemPage() {
                     required
                     placeholder="Enter your email"
                   />
-                  
+
                   <div className="md:col-span-2">
                     <SelectField
                       name="country"
@@ -401,7 +452,7 @@ export default function DesignSystemPage() {
                       ]}
                     />
                   </div>
-                  
+
                   <div className="md:col-span-2">
                     <TextareaField
                       name="message"
@@ -411,7 +462,7 @@ export default function DesignSystemPage() {
                     />
                   </div>
                 </div>
-                
+
                 <div className="flex gap-4 mt-6">
                   <Button type="submit">Submit Form</Button>
                   <Button
@@ -433,9 +484,7 @@ export default function DesignSystemPage() {
         <Section spacing="lg">
           <div className="mb-6">
             <h2 className="text-2xl font-semibold mb-2">Badges</h2>
-            <p className="text-muted-foreground">
-              Badge component variants.
-            </p>
+            <p className="text-muted-foreground">Badge component variants.</p>
           </div>
 
           <Card>

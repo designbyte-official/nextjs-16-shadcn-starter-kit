@@ -17,7 +17,8 @@ export interface IconProps extends SVGProps<SVGSVGElement> {
 // Use: import { Home01Icon } from "@/lib/icons" then <Home01Icon size={24} />
 export function Icon(_props: IconProps) {
   // This component is deprecated - use direct icon imports from @/lib/icons
-  console.warn("Icon component is deprecated. Use direct icon imports from @/lib/icons instead.");
+  console.warn(
+    "Icon component is deprecated. Use direct icon imports from @/lib/icons instead."
+  );
   return null;
 }
-

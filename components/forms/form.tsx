@@ -1,6 +1,6 @@
 "use client";
 
-import { FormProvider, UseFormReturn, FieldValues } from "react-hook-form";
+import { FieldValues, FormProvider, UseFormReturn } from "react-hook-form";
 import { cn } from "@/utils/common/class-names";
 
 export interface FormProps<T extends FieldValues> {
@@ -29,4 +29,3 @@ export function Form<T extends FieldValues>({
     </FormProvider>
   );
 }
-

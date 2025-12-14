@@ -1,3 +1,3 @@
 // Mock for file imports in tests
-export default {};
-
+const fileMock = {};
+export default fileMock;

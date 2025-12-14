@@ -1,7 +1,7 @@
 "use client";
 
 import { forwardRef } from "react";
-import { useFormContext, Controller } from "react-hook-form";
+import { Controller, useFormContext } from "react-hook-form";
 import { Label } from "@/components/ui/label";
 import { ErrorMessage } from "@/components/common/error-message";
 import { cn } from "@/utils/common/class-names";
@@ -61,4 +61,3 @@ export const FormField = forwardRef<HTMLDivElement, FormFieldProps>(
 );
 
 FormField.displayName = "FormField";
-

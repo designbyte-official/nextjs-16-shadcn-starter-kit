@@ -9,6 +9,7 @@ This is a **DSA (Data Structures and Algorithms) Learning Platform** built with 
 **Purpose**: Interactive platform for learning DSA through visualization, practice, and AI-powered tutoring.
 
 **Tech Stack**:
+
 - **App Router** (Next.js 13+ routing)
 - **TypeScript** (strict mode)
 - **Tailwind CSS** for styling
@@ -174,6 +175,7 @@ next-web-app/
 ## 📝 Naming Conventions - CRITICAL
 
 ### Files and Folders
+
 - **ALWAYS use kebab-case**: `login-form.tsx`, `use-auth.ts`, `api-client.ts`
 - **Exception**: Next.js special files must be exact names:
   - `layout.tsx`, `page.tsx`, `loading.tsx`, `error.tsx`, `not-found.tsx`, `route.ts`
@@ -181,25 +183,31 @@ next-web-app/
   - `package.json`, `tsconfig.json`, `next.config.ts`, `components.json`
 
 ### Components
+
 - **File names**: kebab-case - `login-form.tsx`, `dashboard-stats.tsx`
 - **Component names**: PascalCase - `LoginForm`, `DashboardStats`
 
 ### Functions, Variables, Hooks
+
 - **camelCase**: `handleSubmit`, `userData`, `isLoading`, `useAuth`
 
 ### Constants
+
 - **UPPER_SNAKE_CASE**: `API_BASE_URL`, `MAX_RETRY_ATTEMPTS`
 - **PascalCase** for exported constant objects: `ROUTES`, `MESSAGES`
 
 ### Types and Interfaces
+
 - **PascalCase**: `User`, `ApiResponse`, `LoginInput`
 
 ### Tests
+
 - **kebab-case with `.test.ts` suffix**: `format-date.test.ts`, `login-form.test.tsx`
 
 ## 🔍 Where to Put Things
 
 ### New Component?
+
 - **UI component (button, input, card)**: `components/ui/`
 - **Feature-specific**: `components/features/[feature-name]/`
 - **Shared across features**: `components/shared/`
@@ -207,26 +215,32 @@ next-web-app/
 - **Layout component**: `components/layouts/`
 
 ### New Hook?
+
 - **Specific to a feature**: `hooks/use-[name].ts`
 - **Common/reusable**: `hooks/common/use-[name].ts`
 
 ### New Utility Function?
+
 - **Common utility (debounce, throttle, class-names)**: `utils/common/`
 - **Domain-specific utility**: `utils/[domain]-[name].ts`
 
 ### New Service?
+
 - **Extend BaseService**: `services/[domain]-service.ts`
 - **Common service utilities**: `services/common/`
 
 ### New Type?
+
 - **Common types (BaseEntity, etc.)**: `types/common/index.ts`
 - **Domain-specific**: `types/[domain].ts`
 
 ### New Constant?
+
 - **Common constants**: `constants/common/`
 - **Domain-specific**: `constants/[domain].ts`
 
 ### New Validation Schema?
+
 - **Domain-specific**: `lib/validations/[domain].ts`
 
 ## 🏗️ Common Patterns
@@ -336,14 +350,17 @@ All imports use `@/` prefix (configured in `tsconfig.json`):
 ## 🧪 Testing Guidelines
 
 ### Test File Location
+
 - Mirror source structure: `tests/__tests__/utils/format-date.test.ts` for `utils/format-date.ts`
 
 ### Test Naming
+
 - Unit tests: `*.test.ts` or `*.test.tsx`
 - Integration: `*.integration.test.ts`
 - E2E: `*.e2e.test.ts`
 
 ### Test Structure
+
 ```typescript
 describe("functionName or ComponentName", () => {
   it("should do something specific", () => {
@@ -370,6 +387,7 @@ describe("functionName or ComponentName", () => {
 ## 🎨 shadcn/ui Components
 
 Minimal set installed:
+
 - `button`, `card`, `input`, `label`, `textarea`
 - `dialog`, `select`, `combobox`
 - `alert-dialog`, `badge`, `dropdown-menu`
@@ -381,6 +399,7 @@ To add more: `npx shadcn@latest add [component-name] --yes`
 ## 📦 Dependencies
 
 Key dependencies:
+
 - `next`: 16.0.10
 - `react`: 19.2.1
 - `typescript`: 5.x
@@ -412,6 +431,7 @@ Key dependencies:
 ## 📚 Reference Files to Check
 
 When in doubt, check these files for examples:
+
 - `services/auth-service.ts` - Service pattern
 - `lib/api/client.ts` - API client pattern
 - `components/features/auth/login-form.tsx` - Component pattern
@@ -423,4 +443,3 @@ When in doubt, check these files for examples:
 
 **Last Updated**: Project initialization
 **Maintained By**: Development Team
-

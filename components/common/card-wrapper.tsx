@@ -1,6 +1,12 @@
 import { ReactNode } from "react";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { cn } from "@/utils/common/class-names";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
 export interface CardWrapperProps {
   title?: string;
@@ -38,4 +44,3 @@ export function CardWrapper({
     </Card>
   );
 }
-

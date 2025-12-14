@@ -5,6 +5,7 @@ This document explains how to use the reusable form components that integrate wi
 ## Overview
 
 All form components are built on top of `react-hook-form` and `shadcn/ui` components, providing:
+
 - Automatic label and error handling
 - Consistent styling
 - Type-safe form handling
@@ -13,6 +14,7 @@ All form components are built on top of `react-hook-form` and `shadcn/ui` compon
 ## Installation
 
 Form components require:
+
 - `react-hook-form`
 - `@hookform/resolvers` (for Zod validation)
 - `zod` (for schema validation)
@@ -25,7 +27,12 @@ Form components require:
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { Form, InputField, SelectField, TextareaField } from "@/components/forms";
+import {
+  Form,
+  InputField,
+  SelectField,
+  TextareaField,
+} from "@/components/forms";
 
 const formSchema = z.object({
   email: z.string().email("Invalid email address"),
@@ -61,14 +68,14 @@ function MyForm() {
         required
         placeholder="Enter your email"
       />
-      
+
       <InputField
         name="name"
         label="Name"
         required
         placeholder="Enter your name"
       />
-      
+
       <SelectField
         name="country"
         label="Country"
@@ -79,14 +86,14 @@ function MyForm() {
           { value: "uk", label: "United Kingdom" },
         ]}
       />
-      
+
       <TextareaField
         name="message"
         label="Message"
         placeholder="Enter your message"
         rows={4}
       />
-      
+
       <Button type="submit">Submit</Button>
     </Form>
   );
@@ -110,6 +117,7 @@ Wrapper component that provides form context.
 Text input field with label and error handling.
 
 **Props:**
+
 - `name` (required) - Field name
 - `label` - Label text
 - `type` - Input type (text, email, password, number, tel, url)
@@ -135,6 +143,7 @@ Text input field with label and error handling.
 Textarea field with label and error handling.
 
 **Props:**
+
 - `name` (required) - Field name
 - `label` - Label text
 - `required` - Show required indicator
@@ -157,6 +166,7 @@ Textarea field with label and error handling.
 Select dropdown with label and error handling.
 
 **Props:**
+
 - `name` (required) - Field name
 - `label` - Label text
 - `options` (required) - Array of `{ value: string, label: string }`
@@ -184,11 +194,7 @@ Base form field component for custom implementations.
 ```tsx
 <FormField name="custom" label="Custom Field">
   {({ value, onChange, onBlur, error }) => (
-    <YourCustomInput
-      value={value}
-      onChange={onChange}
-      onBlur={onBlur}
-    />
+    <YourCustomInput value={value} onChange={onChange} onBlur={onBlur} />
   )}
 </FormField>
 ```
@@ -230,13 +236,11 @@ const schema = z.object({
 ```tsx
 const watchType = form.watch("type");
 
-{watchType === "custom" && (
-  <InputField
-    name="customValue"
-    label="Custom Value"
-    required
-  />
-)}
+{
+  watchType === "custom" && (
+    <InputField name="customValue" label="Custom Value" required />
+  );
+}
 ```
 
 ### Async Validation
@@ -261,4 +265,3 @@ const form = useForm({
 
 **Last Updated**: Form components setup
 **Maintained By**: Development Team
-

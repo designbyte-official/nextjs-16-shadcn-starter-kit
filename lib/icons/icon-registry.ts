@@ -14,14 +14,14 @@ export {
   ChevronLeftIcon,
   ChevronDownIcon,
   ChevronUpIcon,
-  
+
   // User & Account
   UserIcon,
   UserCircleIcon,
   UserSettingIcon,
   LogoutIcon,
   LoginIcon,
-  
+
   // Actions
   SearchIcon,
   FilterIcon,
@@ -33,13 +33,13 @@ export {
   CloseIcon,
   CheckIcon,
   CancelIcon,
-  
+
   // Communication
   MailIcon,
   NotificationIcon,
   MessageIcon,
   PhoneIcon,
-  
+
   // Files & Folders
   FileIcon,
   File01Icon,
@@ -49,13 +49,13 @@ export {
   UploadIcon,
   SaveIcon,
   FloppyDiskIcon,
-  
+
   // Media
   ImageIcon,
   VideoIcon,
   PlayIcon,
   PauseIcon,
-  
+
   // Status
   EyeIcon,
   EyeHideIcon,
@@ -67,18 +67,18 @@ export {
   HelpCircleIcon,
   CheckCircleIcon,
   ErrorCircleIcon,
-  
+
   // Payment
   CreditCardIcon,
   MoneyIcon,
-  
+
   // Theme & Display
   SunIcon,
   MoonIcon,
   ComputerIcon,
   DarkModeIcon,
   LightModeIcon,
-  
+
   // Other
   CalendarIcon,
   ClockIcon,
@@ -92,27 +92,27 @@ export {
 // Hero Icons - Commonly used icons
 // Import from @heroicons/react/24/outline for outline style, use /24/solid for filled variants
 import {
-  HomeIcon,
-  MagnifyingGlassIcon,
   BellIcon,
-  UserIcon as HeroUserIcon,
   Cog6ToothIcon,
-  ArrowRightIcon as HeroArrowRightIcon,
-  ArrowLeftIcon as HeroArrowLeftIcon,
-  ChevronRightIcon as HeroChevronRightIcon,
-  ChevronLeftIcon as HeroChevronLeftIcon,
-  XMarkIcon,
-  CheckIcon as HeroCheckIcon,
-  PlusIcon,
-  PencilIcon,
-  TrashIcon,
-  EyeIcon as HeroEyeIcon,
+  ComputerDesktopIcon,
   EyeSlashIcon,
+  ArrowLeftIcon as HeroArrowLeftIcon,
+  ArrowRightIcon as HeroArrowRightIcon,
+  CheckIcon as HeroCheckIcon,
+  ChevronLeftIcon as HeroChevronLeftIcon,
+  ChevronRightIcon as HeroChevronRightIcon,
+  EyeIcon as HeroEyeIcon,
+  MoonIcon as HeroMoonIcon,
+  SunIcon as HeroSunIcon,
+  UserIcon as HeroUserIcon,
+  HomeIcon,
   LockClosedIcon,
   LockOpenIcon,
-  SunIcon as HeroSunIcon,
-  MoonIcon as HeroMoonIcon,
-  ComputerDesktopIcon,
+  MagnifyingGlassIcon,
+  PencilIcon,
+  PlusIcon,
+  TrashIcon,
+  XMarkIcon,
 } from "@heroicons/react/24/outline";
 
 // Re-export Hero Icons with Hero prefix for consistency
@@ -139,4 +139,3 @@ export {
   HeroMoonIcon,
   ComputerDesktopIcon as HeroComputerIcon,
 };
-

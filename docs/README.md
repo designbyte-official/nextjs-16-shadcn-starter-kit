@@ -33,6 +33,7 @@ docs/
 ### Regular Updates
 
 All documentation should be updated when:
+
 - New features are added
 - Architecture changes are made
 - API endpoints are modified
@@ -50,9 +51,9 @@ All documentation should be updated when:
 ### Platform Context
 
 This is a **DSA (Data Structures and Algorithms) Learning Platform** that helps users:
+
 - Learn data structures and algorithms interactively
 - Visualize algorithms in real-time
 - Practice with coding challenges
 - Get AI-powered tutoring and explanations
 - Track learning progress
-

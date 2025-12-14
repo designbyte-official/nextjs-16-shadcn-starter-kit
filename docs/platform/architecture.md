@@ -5,16 +5,19 @@
 ### Frontend Architecture
 
 #### Framework & Core
+
 - **Next.js 16**: App Router for routing
 - **React 19**: UI library
 - **TypeScript**: Type safety
 
 #### UI & Styling
+
 - **Tailwind CSS**: Utility-first CSS framework
 - **shadcn/ui**: Component library
 - **Huge Icons / Hero Icons**: Icon system
 
 #### State Management
+
 - **Zustand**: Global state management
 - **React Context**: Local state sharing
 - **URL State**: Route parameters and search params
@@ -22,6 +25,7 @@
 ### Component Architecture
 
 #### Route Groups
+
 - `(auth)`: Authentication pages
 - `(dashboard)`: Main learning dashboard
 - `(account)`: User account management
@@ -30,6 +34,7 @@
 - `(docs)`: Documentation pages
 
 #### Component Organization
+
 - `components/ui/`: Base UI components (shadcn)
 - `components/features/`: Feature-specific components
 - `components/layouts/`: Layout components
@@ -39,17 +44,20 @@
 ### Data Flow
 
 #### Learning Content
+
 - Curriculum data (JSON/TypeScript)
 - Topic definitions
 - Problem sets
 - Visualization configurations
 
 #### User Data
+
 - Progress tracking
 - User preferences
 - Session data
 
 #### AI Integration
+
 - Google Gemini API
 - Chat sessions
 - Context management
@@ -57,6 +65,7 @@
 ### Visualization System
 
 #### Visualizer Types
+
 - Sorting Visualizers (bar charts)
 - Search Visualizers (grids)
 - Graph Visualizers (network graphs)
@@ -64,6 +73,7 @@
 - Data Structure Visualizers (dynamic structures)
 
 #### Visualization Engine
+
 - Canvas/WebGL rendering
 - Animation system
 - Step-by-step progression
@@ -103,16 +113,19 @@ utils/
 ## 🔐 Security
 
 ### Authentication
+
 - JWT-based authentication
 - Session management
 - Secure password handling
 
 ### API Security
+
 - API key management
 - Rate limiting
 - Request validation
 
 ### Data Privacy
+
 - User data encryption
 - Secure storage
 - Privacy compliance
@@ -120,12 +133,14 @@ utils/
 ## 🚀 Performance
 
 ### Optimization Strategies
+
 - Code splitting
 - Lazy loading
 - Image optimization
 - Caching strategies
 
 ### Scalability
+
 - Modular architecture
 - Component reusability
 - Efficient state management
@@ -134,6 +149,7 @@ utils/
 ## 🔄 Update Strategy
 
 This architecture document should be updated when:
+
 - New major features are added
 - Technology stack changes
 - Architecture patterns evolve
@@ -143,4 +159,3 @@ This architecture document should be updated when:
 
 **Last Updated**: Platform initialization
 **Maintained By**: Development Team
-

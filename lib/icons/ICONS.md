@@ -48,7 +48,12 @@ import { Icon } from "@/lib/icons";
 
 function MyComponent() {
   return (
-    <Icon name="Home01" library="hugeicons" size={24} className="text-blue-500" />
+    <Icon
+      name="Home01"
+      library="hugeicons"
+      size={24}
+      className="text-blue-500"
+    />
   );
 }
 ```
@@ -60,6 +65,7 @@ function MyComponent() {
 Huge Icons is the primary icon library. All common icons are exported from `@/lib/icons/icon-registry`.
 
 **Available icon categories:**
+
 - Navigation (Home, Menu, Arrows, Chevrons)
 - User & Account (User, Settings, Login, Logout)
 - Actions (Search, Filter, Edit, Delete, Add)
@@ -78,6 +84,7 @@ Huge Icons is the primary icon library. All common icons are exported from `@/li
 Hero Icons are available as an alternative. They use the "Hero" prefix in exports.
 
 **Example:**
+
 ```tsx
 import { HeroHomeIcon, HeroSearchIcon } from "@/lib/icons";
 
@@ -104,6 +111,7 @@ Use preset sizes with IconWrapper or getIconSize utility:
 - `xl`: 40px (w-10 h-10)
 
 Or use custom sizes:
+
 ```tsx
 <Home01Icon size={28} />
 <IconWrapper icon={Home01Icon} size={28} />
@@ -114,20 +122,22 @@ Or use custom sizes:
 Icons accept standard className props:
 
 ```tsx
-<Home01Icon 
-  size={24} 
-  className="text-blue-500 hover:text-blue-700 transition-colors" 
+<Home01Icon
+  size={24}
+  className="text-blue-500 hover:text-blue-700 transition-colors"
 />
 ```
 
 ## Finding Icons
 
 ### Huge Icons
+
 - Visit: https://hugeicons.com/
 - Search for icons and use the icon name with "Icon" suffix
 - Example: "Home" → `Home01Icon`
 
 ### Hero Icons
+
 - Visit: https://heroicons.com/
 - Icons are exported from `@heroicons/react/24/outline` or `@heroicons/react/24/solid`
 - Use the "Hero" prefixed exports from our registry
@@ -138,6 +148,7 @@ Icons accept standard className props:
 2. **For Hero Icons**: Import from `@heroicons/react` and add to registry with "Hero" prefix
 
 Example:
+
 ```ts
 // lib/icons/icon-registry.ts
 export { NewIcon } from "@hugeicons/core-free-icons";
@@ -152,4 +163,3 @@ export { HeroNewIcon };
 3. **Import from registry** - Use `@/lib/icons` for centralized icon management
 4. **Consistent sizing** - Use preset sizes (xs, sm, md, lg, xl) when possible
 5. **Type safety** - Icons are typed, use TypeScript for better autocomplete
-

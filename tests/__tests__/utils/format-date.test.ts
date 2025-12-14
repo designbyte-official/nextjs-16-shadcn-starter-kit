@@ -7,4 +7,3 @@ describe("formatDate", () => {
     expect(result).toBe("January 15, 2024");
   });
 });
-

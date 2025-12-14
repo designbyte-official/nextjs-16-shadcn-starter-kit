@@ -17,17 +17,18 @@ export default function DocsLayout({
             <Link href="/docs" className="block text-sm hover:underline">
               Overview
             </Link>
-            <Link href="/docs/getting-started" className="block text-sm hover:underline">
+            <Link
+              href="/docs/getting-started"
+              className="block text-sm hover:underline"
+            >
               Getting Started
             </Link>
             {/* Add more nav items as needed */}
           </nav>
         </aside>
-        
+
         {/* Docs Content */}
-        <main className="flex-1 p-8 max-w-4xl">
-          {children}
-        </main>
+        <main className="flex-1 p-8 max-w-4xl">{children}</main>
       </div>
     </div>
   );

@@ -1,5 +1,4 @@
 import { ReactNode } from "react";
-import { Sidebar } from "@/components/shared/sidebar";
 
 // Dashboard Layout Component - Used for main application pages
 // Includes sidebar navigation, consistent app workspace layout
@@ -39,13 +38,10 @@ export function DashboardLayout({ children }: { children: ReactNode }) {
             </a>
           </nav>
         </aside>
-        
+
         {/* Main Content */}
-        <main className="flex-1 p-8">
-          {children}
-        </main>
+        <main className="flex-1 p-8">{children}</main>
       </div>
     </div>
   );
 }
-

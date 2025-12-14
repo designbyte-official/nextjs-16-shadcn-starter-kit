@@ -10,7 +10,9 @@ export async function handleApiError(error: unknown): Promise<never> {
   throw new ApiError("An unknown error occurred", 500);
 }
 
-export function buildQueryString(params: Record<string, string | number | boolean>): string {
+export function buildQueryString(
+  params: Record<string, string | number | boolean>
+): string {
   const searchParams = new URLSearchParams();
   Object.entries(params).forEach(([key, value]) => {
     if (value !== undefined && value !== null) {
@@ -19,4 +21,3 @@ export function buildQueryString(params: Record<string, string | number | boolea
   });
   return searchParams.toString();
 }
-

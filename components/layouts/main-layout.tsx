@@ -13,4 +13,3 @@ export function MainLayout({ children }: { children: ReactNode }) {
     </div>
   );
 }
-

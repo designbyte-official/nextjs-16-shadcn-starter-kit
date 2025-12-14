@@ -6,7 +6,7 @@ An interactive Data Structures and Algorithms learning platform built with Next.
 
 ### Prerequisites
 
-- Node.js 20+ 
+- Node.js 20+
 - pnpm (recommended) or npm/yarn
 
 ### Installation
@@ -104,6 +104,7 @@ pnpm test
 ## 🎯 Common Folders Pattern
 
 Many directories use a `common/` subfolder for shared utilities:
+
 - `lib/common/` - Common library utilities
 - `services/common/` - Common service patterns
 - `types/common/` - Common type definitions

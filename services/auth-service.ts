@@ -20,4 +20,3 @@ class AuthService extends BaseService {
 }
 
 export const authService = new AuthService();
-

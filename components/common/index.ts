@@ -18,4 +18,3 @@ export type { AdaptiveWrapperProps } from "./adaptive-wrapper";
 export type { PageHeaderProps } from "./page-header";
 export type { CardWrapperProps } from "./card-wrapper";
 export type { EmptyStateProps } from "./empty-state";
-

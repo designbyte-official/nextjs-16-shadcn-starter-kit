@@ -11,4 +11,3 @@ export { Icon } from "@/components/common/icon";
 export { IconWrapper } from "@/components/common/icon-wrapper";
 export type { IconProps } from "@/components/common/icon";
 export type { IconWrapperProps } from "@/components/common/icon-wrapper";
-

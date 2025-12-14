@@ -7,28 +7,33 @@ The DSA Learning Platform is an interactive, comprehensive learning system desig
 ## 🌟 Key Features
 
 ### 1. Interactive Learning
+
 - Comprehensive curriculum covering all major DSA topics
 - Step-by-step explanations for complex concepts
 - Visual representations of algorithms and data structures
 
 ### 2. Algorithm Visualization
+
 - Real-time algorithm visualizers
 - Multiple visualization types (bar charts, grids, graphs)
 - Interactive controls to step through algorithms
 
 ### 3. AI-Powered Tutoring
+
 - Integrated AI tutor (Gemini-powered)
 - Context-aware explanations
 - Personalized learning recommendations
 - Code generation and explanation
 
 ### 4. Practice & Assessment
+
 - Coding challenges and exercises
 - Practice problems with varying difficulty
 - Progress tracking and analytics
 - Quiz sections for concept validation
 
 ### 5. Learning Management
+
 - User progress tracking
 - Completion status for topics
 - Personalized learning paths
@@ -106,4 +111,3 @@ The DSA Learning Platform is an interactive, comprehensive learning system desig
 
 **Last Updated**: Platform initialization
 **Maintained By**: Development Team
-

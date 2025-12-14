@@ -20,4 +20,3 @@ export const MESSAGES = {
     MAX_LENGTH: "Maximum length exceeded",
   },
 } as const;
-

@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+
 - Production-ready folder structure with route groups
 - Comprehensive documentation structure
 - Icon system with Huge Icons and Hero Icons
@@ -17,17 +18,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Development setup documentation
 
 ### Changed
+
 - Updated project to reflect DSA Learning Platform purpose
 - Removed shop/e-commerce routes (not relevant for learning platform)
 - Consolidated example files into design system page
 
 ### Removed
+
 - Shop route group and related components
 - Scattered example component files
 
 ## [0.1.0] - 2024-01-XX
 
 ### Added
+
 - Initial project setup
 - Next.js 16 with App Router
 - TypeScript configuration
@@ -41,4 +45,3 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ---
 
 **Note**: This changelog should be updated regularly with each release and significant change.
-
