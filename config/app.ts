@@ -2,23 +2,25 @@ import { env } from "./common/env";
 
 // Application configuration - centralized app settings
 export const APP_CONFIG = {
-  name: "DSA Learning Platform",
-  shortName: "DSA Platform",
+  name: "Next.js Starter Kit",
+  shortName: "Starter Kit",
   description:
-    "An interactive Data Structures and Algorithms learning platform with visualizations, AI-powered tutoring, and comprehensive curriculum.",
+    "A production-ready Next.js starter kit with TypeScript, Tailwind CSS, and shadcn/ui. Fully customizable landing page template and comprehensive design system.",
   url: env.NEXT_PUBLIC_APP_URL || "http://localhost:3000",
-  author: "DSA Platform Team",
+  author: "Starter Kit Team",
   keywords: [
-    "data structures",
-    "algorithms",
-    "DSA",
-    "programming",
-    "learning",
-    "education",
-    "coding",
-    "computer science",
+    "next.js",
+    "starter kit",
+    "template",
+    "typescript",
+    "tailwind css",
+    "shadcn ui",
+    "landing page",
+    "production ready",
+    "react",
+    "web development",
   ],
-  twitter: "@dsaplatform",
+  twitter: "@starterkit",
   verification: {
     google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
     yandex: process.env.NEXT_PUBLIC_YANDEX_VERIFICATION,
