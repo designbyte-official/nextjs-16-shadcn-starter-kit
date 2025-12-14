@@ -10,4 +10,6 @@ export { TopicsGrid } from "./topics-grid";
 export { Testimonials } from "./testimonials";
 export { FAQSection } from "./faq-section";
 export { LandingFooter } from "./landing-footer";
+export { LandingTemplate } from "./landing-template";
+export type { LandingTemplateConfig } from "./landing-template";
 
