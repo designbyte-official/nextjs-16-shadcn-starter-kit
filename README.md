@@ -1,36 +1,107 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js Web App
 
-## Getting Started
+A production-ready Next.js 16 application with TypeScript, Tailwind CSS, and shadcn/ui.
 
-First, run the development server:
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 20+ 
+- pnpm (recommended) or npm/yarn
+
+### Installation
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+# Install dependencies
+pnpm install
+
+# Run development server
 pnpm dev
-# or
-bun dev
+
+# Build for production
+pnpm build
+
+# Start production server
+pnpm start
+
+# Run linter
+pnpm lint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📁 Project Structure
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+See [PROJECT_STRUCTURE.md](./PROJECT_STRUCTURE.md) for detailed folder structure documentation.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+See [AI_REFERENCE.md](./AI_REFERENCE.md) for AI assistant guidelines and conventions.
 
-## Learn More
+## 🏗️ Key Features
 
-To learn more about Next.js, take a look at the following resources:
+- **Next.js 16** with App Router
+- **TypeScript** with strict mode
+- **Tailwind CSS** for styling
+- **shadcn/ui** for UI components
+- **Zustand** for state management
+- **Zod** for validation
+- **Production-ready** folder structure with common subfolders
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📦 Tech Stack
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Framework**: Next.js 16.0.10
+- **Language**: TypeScript 5
+- **Styling**: Tailwind CSS 4
+- **UI Components**: shadcn/ui
+- **State Management**: Zustand
+- **Validation**: Zod
+- **Testing**: Jest, React Testing Library
 
-## Deploy on Vercel
+## 📝 Naming Conventions
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Files & Folders**: kebab-case (`login-form.tsx`, `use-auth.ts`)
+- **Components**: PascalCase (`LoginForm`)
+- **Functions/Variables**: camelCase (`handleSubmit`, `userData`)
+- **Constants**: UPPER_SNAKE_CASE (`API_BASE_URL`)
+- **Types**: PascalCase (`User`, `ApiResponse`)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🔧 Environment Variables
+
+Create a `.env.local` file:
+
+```env
+NEXT_PUBLIC_API_URL=http://localhost:3000/api
+NEXT_PUBLIC_APP_URL=http://localhost:3000
+NODE_ENV=development
+```
+
+## 📚 Documentation
+
+- [PROJECT_STRUCTURE.md](./PROJECT_STRUCTURE.md) - Complete project structure guide
+- [AI_REFERENCE.md](./AI_REFERENCE.md) - AI assistant reference guide
+
+## 🧪 Testing
+
+Test files follow the same structure as source files and use `.test.ts` or `.test.tsx` suffix.
+
+```bash
+# Run tests (when configured)
+pnpm test
+```
+
+## 🎯 Common Folders Pattern
+
+Many directories use a `common/` subfolder for shared utilities:
+- `lib/common/` - Common library utilities
+- `services/common/` - Common service patterns
+- `types/common/` - Common type definitions
+- `utils/common/` - Common utility functions
+- `hooks/common/` - Common hooks
+- `components/common/` - Common components
+- `constants/common/` - Common constants
+- `config/common/` - Common configuration
+
+## 📖 Learn More
+
+- [Next.js Documentation](https://nextjs.org/docs)
+- [shadcn/ui Documentation](https://ui.shadcn.com)
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
+- [Zustand Documentation](https://zustand-demo.pmnd.rs)
+- [Zod Documentation](https://zod.dev)
