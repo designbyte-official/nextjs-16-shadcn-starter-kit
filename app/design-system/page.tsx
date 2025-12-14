@@ -77,8 +77,17 @@ export default function DesignSystemPage() {
   return (
     <DesignSystemLayout>
       <div className="space-y-16">
+        {/* Overview Section */}
+        <div id="overview" className="scroll-mt-20">
+          <h2 className="text-3xl font-bold mb-4">Overview</h2>
+          <p className="text-muted-foreground mb-6 text-lg">
+            This design system provides a comprehensive set of reusable components, icons, and design patterns for building consistent interfaces.
+          </p>
+        </div>
+
         {/* Icons Section */}
-        <Section spacing="lg" id="icons">
+        <div id="icons" className="scroll-mt-20">
+          <Section spacing="lg">
           <div className="mb-6">
             <h2 className="text-2xl font-semibold mb-2">Icons</h2>
             <p className="text-muted-foreground">
@@ -208,11 +217,13 @@ export default function DesignSystemPage() {
             </Card>
           </div>
         </Section>
+        </div>
 
         <Separator className="my-12" />
 
         {/* Buttons Section */}
-        <Section spacing="lg" id="buttons">
+        <div id="buttons" className="scroll-mt-20">
+          <Section spacing="lg">
           <div className="mb-6">
             <h2 className="text-2xl font-semibold mb-2">Buttons</h2>
             <p className="text-muted-foreground">
@@ -250,11 +261,13 @@ export default function DesignSystemPage() {
             </Card>
           </div>
         </Section>
+        </div>
 
         <Separator className="my-12" />
 
         {/* Common Components Section */}
-        <Section spacing="lg" id="common">
+        <div id="common" className="scroll-mt-20">
+          <Section spacing="lg">
           <div className="mb-6">
             <h2 className="text-2xl font-semibold mb-2">Common Components</h2>
             <p className="text-muted-foreground">
@@ -386,11 +399,13 @@ export default function DesignSystemPage() {
             </Card>
           </div>
         </Section>
+        </div>
 
         <Separator className="my-12" />
 
         {/* Forms Section */}
-        <Section spacing="lg" id="forms">
+        <div id="forms" className="scroll-mt-20">
+          <Section spacing="lg">
           <div className="mb-6">
             <h2 className="text-2xl font-semibold mb-2">Form Components</h2>
             <p className="text-muted-foreground mb-2">
@@ -471,11 +486,13 @@ export default function DesignSystemPage() {
             </CardContent>
           </Card>
         </Section>
+        </div>
 
         <Separator className="my-12" />
 
         {/* Badges Section */}
-        <Section spacing="lg" id="badges">
+        <div id="badges" className="scroll-mt-20">
+          <Section spacing="lg">
           <div className="mb-6">
             <h2 className="text-2xl font-semibold mb-2">Badges</h2>
             <p className="text-muted-foreground">Badge component variants.</p>
@@ -494,9 +511,11 @@ export default function DesignSystemPage() {
             </CardContent>
           </Card>
         </Section>
+        </div>
 
         {/* Footer Navigation */}
-        <Section spacing="lg" className="mt-12">
+        <div className="mt-12">
+          <Section spacing="lg">
           <div className="text-center pt-8 border-t">
             <p className="text-muted-foreground mb-4">
               Need help? Check out the documentation or get started building.
@@ -514,6 +533,7 @@ export default function DesignSystemPage() {
             </div>
           </div>
         </Section>
+        </div>
       </div>
     </DesignSystemLayout>
   );

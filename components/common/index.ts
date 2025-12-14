@@ -11,6 +11,7 @@ export { ErrorMessage } from "./error-message";
 export { SuccessMessage } from "./success-message";
 export { IconWrapper } from "./icon-wrapper";
 export { Icon } from "./icon";
+export { MarkdownRenderer } from "./markdown-renderer";
 
 export type { ContainerProps } from "./container";
 export type { SectionProps } from "./section";
