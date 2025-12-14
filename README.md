@@ -1,6 +1,6 @@
-# Next.js Web App
+# DSA Learning Platform
 
-A production-ready Next.js 16 application with TypeScript, Tailwind CSS, and shadcn/ui.
+An interactive Data Structures and Algorithms learning platform built with Next.js 16, featuring algorithm visualizers, comprehensive curriculum, and AI-powered tutoring.
 
 ## 🚀 Getting Started
 
@@ -33,6 +33,21 @@ pnpm lint
 See [PROJECT_STRUCTURE.md](./PROJECT_STRUCTURE.md) for detailed folder structure documentation.
 
 See [AI_REFERENCE.md](./AI_REFERENCE.md) for AI assistant guidelines and conventions.
+
+See [docs/](./docs/) for platform documentation.
+
+## 📚 Documentation
+
+All platform documentation is organized in the `docs/` folder:
+
+- `docs/platform/` - Platform overview, features, and architecture
+- `docs/development/` - Development setup and guidelines
+- `docs/api/` - API documentation
+- `docs/user-guide/` - User-facing documentation
+
+## 🎨 Design System
+
+Visit `/design-system` to see all UI components, icons, and design patterns in action.
 
 ## 🏗️ Key Features
 

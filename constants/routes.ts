@@ -34,9 +34,6 @@ export const ROUTES = {
   // Docs routes
   DOCS: "/docs",
   
-  // Shop routes
-  SHOP: "/shop",
-  CART: "/shop/cart",
-  CHECKOUT: "/shop/checkout",
-  ORDERS: "/shop/orders",
+  // Design System
+  DESIGN_SYSTEM: "/design-system",
 } as const;

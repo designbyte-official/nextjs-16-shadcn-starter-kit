@@ -4,13 +4,18 @@ This document provides comprehensive information about the project structure, co
 
 ## 🎯 Project Overview
 
-This is a **Next.js 16** application using:
+This is a **DSA (Data Structures and Algorithms) Learning Platform** built with **Next.js 16**:
+
+**Purpose**: Interactive platform for learning DSA through visualization, practice, and AI-powered tutoring.
+
+**Tech Stack**:
 - **App Router** (Next.js 13+ routing)
 - **TypeScript** (strict mode)
 - **Tailwind CSS** for styling
 - **shadcn/ui** for UI components
 - **Zustand** for state management
 - **Zod** for validation
+- **Google Gemini API** for AI tutoring
 - **pnpm** as package manager
 
 ## 📁 Complete Folder Structure Reference
@@ -55,14 +60,8 @@ next-web-app/
 │   │   └── docs/
 │   │       ├── page.tsx
 │   │       └── [slug]/page.tsx
-│   ├── (shop)/                   # Route group - shop/e-commerce
-│   │   ├── layout.tsx
-│   │   └── shop/
-│   │       ├── page.tsx
-│   │       ├── products/[id]/page.tsx
-│   │       ├── cart/page.tsx
-│   │       ├── checkout/page.tsx
-│   │       └── orders/page.tsx
+│   ├── design-system/            # Design system showcase page
+│   │   └── page.tsx
 │   ├── api/                      # API routes
 │   │   └── [route]/route.ts
 │   ├── layout.tsx                # Root layout

@@ -86,19 +86,8 @@ app/
 │       ├── page.tsx
 │       └── [slug]/
 │           └── page.tsx
-├── (shop)/                 # Route group for e-commerce/shop
-│   ├── layout.tsx
-│   └── shop/
-│       ├── page.tsx
-│       ├── products/
-│       │   └── [id]/
-│       │       └── page.tsx
-│       ├── cart/
-│       │   └── page.tsx
-│       ├── checkout/
-│       │   └── page.tsx
-│       └── orders/
-│           └── page.tsx
+├── design-system/          # Design system showcase
+│   └── page.tsx            # Centralized component examples
 ├── api/                    # API routes
 │   └── health/
 │       └── route.ts
