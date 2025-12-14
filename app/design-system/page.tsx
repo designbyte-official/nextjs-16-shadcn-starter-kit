@@ -2,7 +2,6 @@
 
 // Design System Page - Centralized showcase of all UI components, icons, and design patterns
 
-import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -18,7 +17,6 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { IconWrapper } from "@/components/common/icon-wrapper";
 import {
-  ArrowLeftIcon,
   HeroHomeIcon,
   HeroSearchIcon,
   HeroUserIcon,
@@ -44,6 +42,8 @@ import {
   SelectField,
   TextareaField,
 } from "@/components/forms";
+import Link from "next/link";
+import { DesignSystemLayout } from "@/components/features/design-system/design-system-layout";
 import { ROUTES } from "@/constants/routes";
 
 // Example form schema for design system
@@ -59,6 +59,7 @@ type ExampleFormData = z.infer<typeof exampleFormSchema>;
 export default function DesignSystemPage() {
   // Example form for demonstration
   const exampleForm = useForm<ExampleFormData>({
+    // @ts-expect-error - zodResolver version mismatch, works at runtime
     resolver: zodResolver(exampleFormSchema),
     defaultValues: {
       name: "",
@@ -74,64 +75,10 @@ export default function DesignSystemPage() {
   };
 
   return (
-    <div className="min-h-screen bg-background">
-      <Section spacing="lg" containerSize="xl">
-        {/* Header */}
-        <div className="mb-12">
-          <Button variant="ghost" size="sm" asChild className="mb-4">
-            <Link href={ROUTES.HOME}>
-              <IconWrapper icon={ArrowLeftIcon} size={16} className="mr-2" />
-              Back to Home
-            </Link>
-          </Button>
-          <div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-2">
-              Design System
-            </h1>
-            <p className="text-muted-foreground text-lg max-w-3xl">
-              Complete showcase of UI components, icons, and design patterns.
-              Use this as a reference for building consistent interfaces.
-            </p>
-          </div>
-        </div>
-
-        {/* Quick Navigation */}
-        <div className="mb-12 flex flex-wrap gap-2">
-          <a
-            href="#icons"
-            className="px-4 py-2 text-sm bg-muted hover:bg-muted/80 rounded-md transition-colors"
-          >
-            Icons
-          </a>
-          <a
-            href="#buttons"
-            className="px-4 py-2 text-sm bg-muted hover:bg-muted/80 rounded-md transition-colors"
-          >
-            Buttons
-          </a>
-          <a
-            href="#forms"
-            className="px-4 py-2 text-sm bg-muted hover:bg-muted/80 rounded-md transition-colors"
-          >
-            Forms
-          </a>
-          <a
-            href="#common"
-            className="px-4 py-2 text-sm bg-muted hover:bg-muted/80 rounded-md transition-colors"
-          >
-            Common Components
-          </a>
-          <a
-            href="#badges"
-            className="px-4 py-2 text-sm bg-muted hover:bg-muted/80 rounded-md transition-colors"
-          >
-            Badges
-          </a>
-        </div>
-      </Section>
-
-      {/* Icons Section */}
-      <Section spacing="lg" containerSize="xl" id="icons">
+    <DesignSystemLayout>
+      <div className="space-y-16">
+        {/* Icons Section */}
+        <Section spacing="lg" id="icons">
           <div className="mb-6">
             <h2 className="text-2xl font-semibold mb-2">Icons</h2>
             <p className="text-muted-foreground">
@@ -265,7 +212,7 @@ export default function DesignSystemPage() {
         <Separator className="my-12" />
 
         {/* Buttons Section */}
-        <Section spacing="lg" containerSize="xl" id="buttons">
+        <Section spacing="lg" id="buttons">
           <div className="mb-6">
             <h2 className="text-2xl font-semibold mb-2">Buttons</h2>
             <p className="text-muted-foreground">
@@ -307,7 +254,7 @@ export default function DesignSystemPage() {
         <Separator className="my-12" />
 
         {/* Common Components Section */}
-        <Section spacing="lg" containerSize="xl" id="common">
+        <Section spacing="lg" id="common">
           <div className="mb-6">
             <h2 className="text-2xl font-semibold mb-2">Common Components</h2>
             <p className="text-muted-foreground">
@@ -443,7 +390,7 @@ export default function DesignSystemPage() {
         <Separator className="my-12" />
 
         {/* Forms Section */}
-        <Section spacing="lg" containerSize="xl" id="forms">
+        <Section spacing="lg" id="forms">
           <div className="mb-6">
             <h2 className="text-2xl font-semibold mb-2">Form Components</h2>
             <p className="text-muted-foreground mb-2">
@@ -528,7 +475,7 @@ export default function DesignSystemPage() {
         <Separator className="my-12" />
 
         {/* Badges Section */}
-        <Section spacing="lg" containerSize="xl" id="badges">
+        <Section spacing="lg" id="badges">
           <div className="mb-6">
             <h2 className="text-2xl font-semibold mb-2">Badges</h2>
             <p className="text-muted-foreground">Badge component variants.</p>
@@ -549,7 +496,7 @@ export default function DesignSystemPage() {
         </Section>
 
         {/* Footer Navigation */}
-        <Section spacing="lg" containerSize="xl" className="mt-12">
+        <Section spacing="lg" className="mt-12">
           <div className="text-center pt-8 border-t">
             <p className="text-muted-foreground mb-4">
               Need help? Check out the documentation or get started building.
@@ -567,6 +514,7 @@ export default function DesignSystemPage() {
             </div>
           </div>
         </Section>
-    </div>
+      </div>
+    </DesignSystemLayout>
   );
 }

@@ -52,7 +52,7 @@ export const SelectField = forwardRef<HTMLDivElement, SelectFieldProps>(
         className={className}
       >
         {({ value, onChange, error }) => (
-          <Select value={value} onValueChange={onChange} disabled={disabled}>
+          <Select value={value as string} onValueChange={onChange} disabled={disabled}>
             <SelectTrigger
               id={name}
               className={cn(error && "border-destructive", selectClassName)}

@@ -18,7 +18,7 @@ export interface FormFieldProps {
     onBlur: () => void;
     name: string;
     error?: string;
-  }) => React.ReactNode;
+  }) => React.ReactElement;
 }
 
 // FormField - Base form field component with label and error handling

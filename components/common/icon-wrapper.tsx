@@ -6,7 +6,7 @@ import { cn } from "@/utils/common/class-names";
 import type { ComponentType, SVGProps } from "react";
 
 // Type for Huge Icons (IconSvgObject) - matches @hugeicons/core-free-icons
-type IconSvgObject = [string, Record<string, string | number>][] | any;
+type IconSvgObject = [string, Record<string, string | number>][] | unknown;
 
 // Union type for both React components and Huge Icons
 type IconType =
@@ -50,7 +50,7 @@ export function IconWrapper({
   if (isHugeIcon(icon)) {
     return (
       <HugeiconsIcon
-        icon={icon}
+        icon={icon as Parameters<typeof HugeiconsIcon>[0]["icon"]}
         size={typeof iconSize === "number" ? iconSize : undefined}
         className={iconClassName}
       />
