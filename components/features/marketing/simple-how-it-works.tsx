@@ -26,40 +26,40 @@ const steps = [
 
 export function SimpleHowItWorks() {
   return (
-    <section className="py-24 bg-background border-b border-border">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="text-center mb-16">
-          <div className="inline-block px-3 py-1 rounded-full bg-muted text-muted-foreground text-[10px] font-bold uppercase tracking-widest mb-4">
+    <section className="bg-background border-border border-b px-4 py-24 sm:px-6">
+      <div className="mx-auto max-w-7xl">
+        <div className="mb-16 text-center">
+          <div className="bg-muted text-muted-foreground mb-4 inline-block rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-widest">
             The Process
           </div>
-          <h2 className="text-3xl font-bold text-foreground mb-4">
+          <h2 className="text-foreground mb-4 text-3xl font-bold">
             Get Started in Three Simple Steps
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-muted-foreground mx-auto max-w-2xl">
             From setup to deployment. Build your project quickly with our starter kit.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
-          <div className="hidden md:block absolute top-12 left-[16%] right-[16%] h-0.5 bg-gradient-to-r from-border via-primary/50 to-border z-0" />
+        <div className="relative grid grid-cols-1 gap-12 md:grid-cols-3">
+          <div className="border-border via-primary/50 absolute top-12 left-[16%] right-[16%] z-0 hidden h-0.5 bg-gradient-to-r from-border md:block" />
 
           {steps.map((item, i) => (
             <div
               key={i}
-              className="relative z-10 flex flex-col items-center text-center group"
+              className="group relative z-10 flex flex-col items-center text-center"
             >
-              <div className="w-24 h-24 bg-card rounded-full border border-border flex items-center justify-center mb-6 shadow-sm group-hover:border-primary group-hover:shadow-md transition-all">
-                <div className="w-12 h-12 bg-muted text-foreground rounded-full flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+              <div className="bg-card border-border mb-6 flex h-24 w-24 items-center justify-center rounded-full border shadow-sm transition-all group-hover:border-primary group-hover:shadow-lg">
+                <div className="bg-muted text-foreground group-hover:bg-primary group-hover:text-primary-foreground flex h-12 w-12 items-center justify-center rounded-full transition-all duration-300">
                   <IconWrapper icon={item.icon} size={24} />
                 </div>
               </div>
-              <div className="text-xs font-bold text-primary mb-2">
+              <div className="text-primary mb-2 text-xs font-bold">
                 STEP {item.step}
               </div>
-              <h3 className="text-xl font-bold text-foreground mb-3">
+              <h3 className="text-foreground mb-3 text-xl font-bold">
                 {item.title}
               </h3>
-              <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
+              <p className="text-muted-foreground max-w-xs text-sm leading-relaxed">
                 {item.desc}
               </p>
             </div>

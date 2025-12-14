@@ -44,7 +44,7 @@ export default function RootLayout({
   });
 
   return (
-    <html lang="en" className={figtree.variable} suppressHydrationWarning>
+    <html lang="en" className={`${figtree.variable} scroll-smooth`} suppressHydrationWarning>
       <head>
         <JsonLd data={organizationJsonLd} />
         <JsonLd data={websiteJsonLd} />
