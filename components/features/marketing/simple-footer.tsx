@@ -35,34 +35,37 @@ const GithubIcon = CodeIcon;
 
 export function SimpleFooter() {
   return (
-    <footer className="bg-foreground text-muted-foreground pt-20 pb-10 px-4 sm:px-6 border-t border-border">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
+    <footer className="bg-foreground text-muted-foreground border-border border-t px-4 pb-10 pt-20 sm:px-6">
+      <div className="mx-auto mb-16 grid max-w-7xl grid-cols-1 gap-12 md:grid-cols-12">
         {/* Brand Column */}
-        <div className="md:col-span-4 space-y-6">
-          <div className="flex items-center gap-3 text-background">
-            <span className="font-bold tracking-tight text-lg">
+        <div className="space-y-6 md:col-span-4">
+          <div className="text-background flex items-center gap-3">
+            <span className="text-lg font-bold tracking-tight">
               {APP_CONFIG.name}
             </span>
           </div>
-          <p className="text-sm text-muted-foreground leading-relaxed max-w-sm">
+          <p className="text-muted-foreground max-w-sm text-sm leading-relaxed">
             A production-ready Next.js starter kit. Built with modern technologies and best practices.
           </p>
           <div className="flex gap-4 pt-2">
             <a
               href="#"
-              className="p-2 bg-muted/20 rounded-full hover:bg-primary hover:text-primary-foreground transition-colors"
+              className="bg-muted/20 hover:bg-primary hover:text-primary-foreground rounded-full p-2 transition-all hover:scale-110"
+              aria-label="Twitter"
             >
               <IconWrapper icon={TwitterIcon} size={16} />
             </a>
             <a
               href="#"
-              className="p-2 bg-muted/20 rounded-full hover:bg-primary hover:text-primary-foreground transition-colors"
+              className="bg-muted/20 hover:bg-primary hover:text-primary-foreground rounded-full p-2 transition-all hover:scale-110"
+              aria-label="LinkedIn"
             >
               <IconWrapper icon={LinkedInIcon} size={16} />
             </a>
             <a
               href="#"
-              className="p-2 bg-muted/20 rounded-full hover:bg-primary hover:text-primary-foreground transition-colors"
+              className="bg-muted/20 hover:bg-primary hover:text-primary-foreground rounded-full p-2 transition-all hover:scale-110"
+              aria-label="GitHub"
             >
               <IconWrapper icon={GithubIcon} size={16} />
             </a>
@@ -70,11 +73,11 @@ export function SimpleFooter() {
         </div>
 
         {/* Footer Links */}
-        <div className="md:col-span-2 space-y-4">
-          <h4 className="text-background font-bold text-sm tracking-widest uppercase">
+        <div className="space-y-4 md:col-span-2">
+          <h4 className="text-background text-sm font-bold uppercase tracking-widest">
             Product
           </h4>
-          <ul className="space-y-3 text-sm text-muted-foreground">
+          <ul className="text-muted-foreground space-y-3 text-sm">
             {footerLinks.product.map((link, i) => (
               <li key={i}>
                 <Link
@@ -88,11 +91,11 @@ export function SimpleFooter() {
           </ul>
         </div>
 
-        <div className="md:col-span-2 space-y-4">
-          <h4 className="text-background font-bold text-sm tracking-widest uppercase">
+        <div className="space-y-4 md:col-span-2">
+          <h4 className="text-background text-sm font-bold uppercase tracking-widest">
             Company
           </h4>
-          <ul className="space-y-3 text-sm text-muted-foreground">
+          <ul className="text-muted-foreground space-y-3 text-sm">
             {footerLinks.company.map((link, i) => (
               <li key={i}>
                 <Link
@@ -106,11 +109,11 @@ export function SimpleFooter() {
           </ul>
         </div>
 
-        <div className="md:col-span-2 space-y-4">
-          <h4 className="text-background font-bold text-sm tracking-widest uppercase">
+        <div className="space-y-4 md:col-span-2">
+          <h4 className="text-background text-sm font-bold uppercase tracking-widest">
             Legal
           </h4>
-          <ul className="space-y-3 text-sm text-muted-foreground">
+          <ul className="text-muted-foreground space-y-3 text-sm">
             {footerLinks.legal.map((link, i) => (
               <li key={i}>
                 <Link
@@ -124,11 +127,11 @@ export function SimpleFooter() {
           </ul>
         </div>
 
-        <div className="md:col-span-2 space-y-4">
-          <h4 className="text-background font-bold text-sm tracking-widest uppercase">
+        <div className="space-y-4 md:col-span-2">
+          <h4 className="text-background text-sm font-bold uppercase tracking-widest">
             Resources
           </h4>
-          <ul className="space-y-3 text-sm text-muted-foreground">
+          <ul className="text-muted-foreground space-y-3 text-sm">
             {footerLinks.resources.map((link, i) => (
               <li key={i}>
                 <Link
@@ -143,7 +146,7 @@ export function SimpleFooter() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-medium text-muted-foreground">
+      <div className="border-border mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 border-t pt-8 text-xs font-medium text-muted-foreground md:flex-row">
         <div>
           &copy; {new Date().getFullYear()} {APP_CONFIG.name}. All rights reserved.
         </div>

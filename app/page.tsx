@@ -77,7 +77,7 @@ export default function HomePage() {
           />
 
           <div className="relative z-10 mx-auto max-w-4xl text-center">
-            <h1 className="text-foreground mb-8 text-5xl leading-[1.1] font-extrabold tracking-tight md:text-7xl">
+            <h1 className="text-foreground animate-in fade-in slide-in-from-bottom-4 mb-8 text-5xl leading-[1.1] font-extrabold tracking-tight duration-700 md:text-7xl">
               Build Your Next
               <br />
               <span className="from-primary to-foreground bg-gradient-to-r bg-clip-text text-transparent">
@@ -85,16 +85,16 @@ export default function HomePage() {
               </span>
             </h1>
 
-            <p className="text-muted-foreground mx-auto mb-10 max-w-2xl text-xl leading-relaxed">
+            <p className="text-muted-foreground animate-in fade-in slide-in-from-bottom-6 mx-auto mb-10 max-w-2xl text-xl leading-relaxed delay-100 duration-700">
               A production-ready Next.js starter kit with TypeScript, Tailwind
               CSS, and everything you need to launch quickly.
             </p>
 
-            <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <div className="animate-in fade-in slide-in-from-bottom-8 flex flex-col items-center justify-center gap-4 delay-200 duration-700 sm:flex-row">
               <Button
                 asChild
                 size="lg"
-                className="h-14 rounded-full px-10 text-lg"
+                className="shadow-primary/10 hover:shadow-primary/20 h-14 rounded-full px-10 text-lg shadow-lg transition-all hover:shadow-xl"
               >
                 <Link href={ROUTES.REGISTER}>Get Started</Link>
               </Button>
@@ -102,7 +102,7 @@ export default function HomePage() {
                 variant="outline"
                 size="lg"
                 asChild
-                className="h-14 rounded-full px-10 text-lg"
+                className="hover:bg-muted h-14 rounded-full px-10 text-lg transition-all"
               >
                 <Link href={ROUTES.DESIGN_SYSTEM}>View Design System</Link>
               </Button>
