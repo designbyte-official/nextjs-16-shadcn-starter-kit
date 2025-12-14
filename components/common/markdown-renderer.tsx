@@ -19,7 +19,8 @@ export function MarkdownRenderer({ content, className }: MarkdownRendererProps) 
         remarkPlugins={[remarkGfm]}
         rehypePlugins={[rehypeHighlight]}
         components={{
-          code: ({ inline, className: codeClassName, children, ...props }) => {
+          code: ({ className: codeClassName, children, ...props }: any) => {
+            const inline = !codeClassName;
             const match = /language-(\w+)/.exec(codeClassName || "");
             return !inline && match ? (
               <pre className="bg-muted p-4 rounded-lg overflow-x-auto">

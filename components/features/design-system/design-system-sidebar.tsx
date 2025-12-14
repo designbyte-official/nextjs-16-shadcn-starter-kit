@@ -23,6 +23,9 @@ const sidebarItems: SidebarItem[] = [
   { id: "common", label: "Common Components", href: "#common", keywords: ["common", "shared", "reusable", "components"] },
 ];
 
+// Add home link as a special item
+const homeItem = { id: "home", label: "← Back to Home", href: "/" };
+
 interface DesignSystemSidebarProps {
   searchQuery?: string;
 }
@@ -116,7 +119,20 @@ export function DesignSystemSidebar({ searchQuery = "" }: DesignSystemSidebarPro
   };
 
   return (
-    <nav className="space-y-1">
+    <nav className="space-y-0.5">
+      {/* Home link */}
+      <Link
+        href={homeItem.href}
+        className={cn(
+          "block px-2.5 py-1.5 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted rounded-md transition-colors mb-3"
+        )}
+      >
+        {homeItem.label}
+      </Link>
+      
+      <div className="h-px bg-border my-3" />
+      
+      {/* Navigation items */}
       {filteredItems.length > 0 ? (
         filteredItems.map((item) => {
           const isActive = activeSection === item.id;
@@ -126,7 +142,7 @@ export function DesignSystemSidebar({ searchQuery = "" }: DesignSystemSidebarPro
               href={item.href}
               onClick={(e) => handleClick(e, item.href)}
               className={cn(
-                "block px-3 py-2 text-sm rounded-md transition-colors",
+                "block px-2.5 py-1.5 text-sm rounded-md transition-colors",
                 isActive
                   ? "bg-primary text-primary-foreground font-medium"
                   : "text-muted-foreground hover:bg-muted hover:text-foreground"
@@ -137,7 +153,7 @@ export function DesignSystemSidebar({ searchQuery = "" }: DesignSystemSidebarPro
           );
         })
       ) : (
-        <div className="px-3 py-2 text-sm text-muted-foreground">
+        <div className="px-2.5 py-1.5 text-sm text-muted-foreground">
           No components found
         </div>
       )}

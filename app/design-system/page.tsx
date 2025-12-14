@@ -33,7 +33,6 @@ import {
   ErrorMessage,
   LoadingSpinner,
   PageHeader,
-  Section,
   SuccessMessage,
 } from "@/components/common";
 import {
@@ -79,24 +78,26 @@ export default function DesignSystemPage() {
       <div className="space-y-16">
         {/* Overview Section */}
         <div id="overview" className="scroll-mt-20">
-          <h2 className="text-3xl font-bold mb-4">Overview</h2>
-          <p className="text-muted-foreground mb-6 text-lg">
-            This design system provides a comprehensive set of reusable components, icons, and design patterns for building consistent interfaces.
-          </p>
+          <div className="space-y-3">
+            <h2 className="text-3xl font-semibold tracking-tight text-foreground">Overview</h2>
+            <p className="text-base text-muted-foreground leading-relaxed">
+              This design system provides a comprehensive set of reusable components, icons, and design patterns for building consistent interfaces.
+            </p>
+          </div>
         </div>
 
         {/* Icons Section */}
         <div id="icons" className="scroll-mt-20">
-          <Section spacing="lg">
-          <div className="mb-6">
-            <h2 className="text-2xl font-semibold mb-2">Icons</h2>
-            <p className="text-muted-foreground">
-              Icon library using Huge Icons (primary) and Hero Icons
-              (secondary).
-            </p>
+          <div className="space-y-4 mb-6">
+            <div className="space-y-2">
+              <h2 className="text-2xl font-semibold tracking-tight text-foreground">Icons</h2>
+              <p className="text-sm text-muted-foreground">
+                Icon library using Huge Icons (primary) and Hero Icons (secondary).
+              </p>
+            </div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 gap-4">
             <Card>
               <CardHeader>
                 <CardTitle>Huge Icons - Direct Usage</CardTitle>
@@ -216,22 +217,20 @@ export default function DesignSystemPage() {
               </CardContent>
             </Card>
           </div>
-        </Section>
         </div>
 
         <Separator className="my-12" />
 
         {/* Buttons Section */}
         <div id="buttons" className="scroll-mt-20">
-          <Section spacing="lg">
-          <div className="mb-6">
-            <h2 className="text-2xl font-semibold mb-2">Buttons</h2>
-            <p className="text-muted-foreground">
+          <div className="space-y-2 mb-6">
+            <h2 className="text-2xl font-semibold tracking-tight text-foreground">Buttons</h2>
+            <p className="text-sm text-muted-foreground">
               Button component variants and sizes.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 gap-4">
             <Card>
               <CardHeader>
                 <CardTitle>Button Variants</CardTitle>
@@ -260,22 +259,20 @@ export default function DesignSystemPage() {
               </CardContent>
             </Card>
           </div>
-        </Section>
         </div>
 
         <Separator className="my-12" />
 
         {/* Common Components Section */}
         <div id="common" className="scroll-mt-20">
-          <Section spacing="lg">
-          <div className="mb-6">
-            <h2 className="text-2xl font-semibold mb-2">Common Components</h2>
+          <div className="space-y-2 mb-6">
+            <h2 className="text-2xl font-semibold tracking-tight text-foreground">Common Components</h2>
             <p className="text-muted-foreground">
               Reusable application components for consistent UI patterns.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 gap-4">
             <Card>
               <CardHeader>
                 <CardTitle>Container</CardTitle>
@@ -398,16 +395,14 @@ export default function DesignSystemPage() {
               </CardContent>
             </Card>
           </div>
-        </Section>
         </div>
 
         <Separator className="my-12" />
 
         {/* Forms Section */}
         <div id="forms" className="scroll-mt-20">
-          <Section spacing="lg">
-          <div className="mb-6">
-            <h2 className="text-2xl font-semibold mb-2">Form Components</h2>
+          <div className="space-y-2 mb-6">
+            <h2 className="text-2xl font-semibold tracking-tight text-foreground">Form Components</h2>
             <p className="text-muted-foreground mb-2">
               Reusable form components with react-hook-form integration. All
               form fields include labels, error handling, and validation
@@ -432,7 +427,7 @@ export default function DesignSystemPage() {
             </CardHeader>
             <CardContent>
               <Form form={exampleForm} onSubmit={handleExampleSubmit}>
-                <div className="grid md:grid-cols-2 gap-6">
+                <div className="grid md:grid-cols-2 gap-4">
                   <InputField
                     name="name"
                     label="Name"
@@ -485,16 +480,14 @@ export default function DesignSystemPage() {
               </Form>
             </CardContent>
           </Card>
-        </Section>
         </div>
 
         <Separator className="my-12" />
 
         {/* Badges Section */}
         <div id="badges" className="scroll-mt-20">
-          <Section spacing="lg">
-          <div className="mb-6">
-            <h2 className="text-2xl font-semibold mb-2">Badges</h2>
+          <div className="space-y-2 mb-6">
+            <h2 className="text-2xl font-semibold tracking-tight text-foreground">Badges</h2>
             <p className="text-muted-foreground">Badge component variants.</p>
           </div>
 
@@ -510,12 +503,10 @@ export default function DesignSystemPage() {
               </div>
             </CardContent>
           </Card>
-        </Section>
         </div>
 
         {/* Footer Navigation */}
         <div className="mt-12">
-          <Section spacing="lg">
           <div className="text-center pt-8 border-t">
             <p className="text-muted-foreground mb-4">
               Need help? Check out the documentation or get started building.
@@ -532,7 +523,6 @@ export default function DesignSystemPage() {
               </Link>
             </div>
           </div>
-        </Section>
         </div>
       </div>
     </DesignSystemLayout>
