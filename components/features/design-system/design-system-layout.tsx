@@ -8,6 +8,8 @@ import { SearchIcon } from "@/lib/icons";
 import { ROUTES } from "@/constants/routes";
 import { DesignSystemSidebar } from "./design-system-sidebar";
 import { useState } from "react";
+import { motion } from "motion/react";
+import { usePathname } from "next/navigation";
 
 interface DesignSystemLayoutProps {
   children: React.ReactNode;
@@ -15,6 +17,7 @@ interface DesignSystemLayoutProps {
 
 export function DesignSystemLayout({ children }: DesignSystemLayoutProps) {
   const [searchQuery, setSearchQuery] = useState("");
+  const pathname = usePathname();
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
@@ -97,9 +100,15 @@ export function DesignSystemLayout({ children }: DesignSystemLayoutProps) {
           {/* Scrollable Main Content with sidebar offset */}
           <main className="flex-1 lg:ml-64 overflow-y-auto bg-background">
             <div className="w-full">
-              <div className="px-4 sm:px-6 lg:px-8 py-8">
+              <motion.div
+                key={`content-${pathname}`}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.1 }}
+                className="px-4 sm:px-6 lg:px-8 py-8"
+              >
                 {children}
-              </div>
+              </motion.div>
             </div>
           </main>
       </div>

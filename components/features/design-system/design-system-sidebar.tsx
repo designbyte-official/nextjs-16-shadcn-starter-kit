@@ -71,19 +71,10 @@ export function DesignSystemSidebar({ searchQuery = "" }: DesignSystemSidebarPro
   useEffect(() => {
     // Set active section based on current pathname
     const currentSection = sidebarItems.find((item) => item.href === pathname)?.id || "overview";
-    // Use requestAnimationFrame to avoid synchronous setState in effect
     requestAnimationFrame(() => {
       setActiveSection(currentSection);
     });
   }, [pathname]);
-
-  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    // Let Next.js handle navigation, just update active state
-    const item = sidebarItems.find((item) => item.href === href);
-    if (item) {
-      setActiveSection(item.id);
-    }
-  };
 
   return (
     <div className="flex flex-col h-full">
@@ -97,23 +88,13 @@ export function DesignSystemSidebar({ searchQuery = "" }: DesignSystemSidebarPro
             return (
               <React.Fragment key={item.id}>
                 {showSeparator && (
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.2 }}
-                    className="my-2 border-t border-border"
-                  />
+                  <div className="my-2 border-t border-border" />
                 )}
-                <motion.div
-                  initial={{ opacity: 0, x: -10 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.2, delay: index * 0.02 }}
-                >
+                <div>
                   <Link
                     href={item.href}
-                    onClick={(e) => handleClick(e, item.href)}
                     className={cn(
-                      "relative block px-3 py-2 text-sm rounded-md transition-colors",
+                      "relative block px-3 py-2 text-sm rounded-md transition-all duration-200",
                       item.indent && "pl-6",
                       isActive
                         ? "text-primary-foreground font-medium"
@@ -132,9 +113,11 @@ export function DesignSystemSidebar({ searchQuery = "" }: DesignSystemSidebarPro
                         }}
                       />
                     )}
-                    <span className="relative z-10">{item.label}</span>
+                    <span className="relative z-10 inline-block">
+                      {item.label}
+                    </span>
                   </Link>
-                </motion.div>
+                </div>
               </React.Fragment>
             );
           })
@@ -147,14 +130,16 @@ export function DesignSystemSidebar({ searchQuery = "" }: DesignSystemSidebarPro
       
       {/* Fixed bottom section with border and home link */}
       <div className="flex-shrink-0 border-t border-border pt-3 pb-3">
-        <Link
-          href="/"
-          className={cn(
-            "block px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted rounded-md transition-colors"
-          )}
-        >
-          ← Back to Home
-        </Link>
+        <div>
+          <Link
+            href="/"
+            className={cn(
+              "block px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted rounded-md transition-all duration-200"
+            )}
+          >
+            ← Back to Home
+          </Link>
+        </div>
       </div>
     </div>
   );
