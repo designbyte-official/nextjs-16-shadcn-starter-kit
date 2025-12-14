@@ -38,10 +38,10 @@ export function MarkdownRenderer({ content, className }: MarkdownRendererProps) 
         ]}
         components={{
           h1: ({ ...props }: any) => (
-            <h1 className="text-4xl font-semibold tracking-tight text-foreground mb-6 mt-0 pb-4 border-b border-border scroll-mt-20" {...props} />
+            <h1 className="text-4xl font-semibold tracking-tight text-foreground mb-6 mt-0 pb-4 border-b border-border scroll-mt-20 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8" {...props} />
           ),
           h2: ({ ...props }: any) => (
-            <h2 className="text-3xl font-semibold tracking-tight text-foreground mb-4 mt-8 pt-6 border-t border-border first:border-t-0 first:pt-0 scroll-mt-20" {...props} />
+            <h2 className="text-3xl font-semibold tracking-tight text-foreground mb-4 mt-8 pt-6 border-t border-border first:border-t-0 first:pt-0 scroll-mt-20 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8" {...props} />
           ),
           h3: ({ ...props }: any) => (
             <h3 className="text-2xl font-semibold tracking-tight text-foreground mb-3 mt-6 scroll-mt-20" {...props} />

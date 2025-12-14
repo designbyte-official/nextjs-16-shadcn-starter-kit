@@ -94,12 +94,14 @@ export function DesignSystemLayout({ children }: DesignSystemLayoutProps) {
           </div>
         </aside>
 
-        {/* Scrollable Main Content with sidebar offset */}
-        <main className="flex-1 lg:ml-64 overflow-y-auto bg-background">
-          <div className="w-full px-4 sm:px-6 lg:px-8 py-8">
-            {children}
-          </div>
-        </main>
+          {/* Scrollable Main Content with sidebar offset */}
+          <main className="flex-1 lg:ml-64 overflow-y-auto bg-background">
+            <div className="w-full">
+              <div className="px-4 sm:px-6 lg:px-8 py-8">
+                {children}
+              </div>
+            </div>
+          </main>
       </div>
     </div>
   );

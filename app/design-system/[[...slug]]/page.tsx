@@ -83,13 +83,11 @@ export default async function DesignSystemPage({ params }: DesignSystemPageProps
     );
   }
 
-  // Otherwise render markdown content
-  return (
-    <DesignSystemLayout>
-      <div className="w-full">
+    // Otherwise render markdown content
+    return (
+      <DesignSystemLayout>
         <MarkdownRenderer content={content} />
-      </div>
-    </DesignSystemLayout>
-  );
+      </DesignSystemLayout>
+    );
 }
 

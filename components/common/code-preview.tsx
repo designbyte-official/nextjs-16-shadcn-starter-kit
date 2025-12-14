@@ -37,15 +37,15 @@ export function CodePreview({ code, language = "tsx", preview, className }: Code
         </div>
 
         {preview && (
-          <TabsContent value="preview" className="m-0 p-4 bg-background">
-            <div className="flex items-center justify-center min-h-[200px]">
+          <TabsContent value="preview" className="m-0 p-6 bg-background">
+            <div className="flex items-center justify-center min-h-[200px] w-full">
               {preview}
             </div>
           </TabsContent>
         )}
 
         <TabsContent value="code" className="m-0">
-          <pre className="bg-muted p-4 overflow-x-auto text-sm font-mono">
+          <pre className="bg-muted p-4 overflow-x-auto text-sm font-mono m-0">
             <code className={`language-${language}`}>{code}</code>
           </pre>
         </TabsContent>
