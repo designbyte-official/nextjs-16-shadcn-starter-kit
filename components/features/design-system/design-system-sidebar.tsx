@@ -13,18 +13,12 @@ interface SidebarItem {
 
 const sidebarItems: SidebarItem[] = [
   { id: "overview", label: "Overview", href: "#overview", keywords: ["overview", "introduction", "getting started"] },
-  { id: "colors", label: "Colors", href: "#colors", keywords: ["colors", "palette", "theme"] },
-  { id: "typography", label: "Typography", href: "#typography", keywords: ["typography", "fonts", "text"] },
   { id: "icons", label: "Icons", href: "#icons", keywords: ["icons", "symbols", "images"] },
   { id: "buttons", label: "Buttons", href: "#buttons", keywords: ["buttons", "actions", "click"] },
+  { id: "common", label: "Common Components", href: "#common", keywords: ["common", "shared", "reusable", "components"] },
   { id: "forms", label: "Forms", href: "#forms", keywords: ["forms", "inputs", "fields", "validation"] },
   { id: "badges", label: "Badges", href: "#badges", keywords: ["badges", "labels", "tags"] },
-  { id: "cards", label: "Cards", href: "#cards", keywords: ["cards", "containers", "boxes"] },
-  { id: "common", label: "Common Components", href: "#common", keywords: ["common", "shared", "reusable", "components"] },
 ];
-
-// Add home link as a special item
-const homeItem = { id: "home", label: "← Back to Home", href: "/" };
 
 interface DesignSystemSidebarProps {
   searchQuery?: string;
@@ -119,44 +113,46 @@ export function DesignSystemSidebar({ searchQuery = "" }: DesignSystemSidebarPro
   };
 
   return (
-    <nav className="space-y-0.5">
-      {/* Home link */}
-      <Link
-        href={homeItem.href}
-        className={cn(
-          "block px-2.5 py-1.5 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted rounded-md transition-colors mb-3"
+    <div className="flex flex-col h-full">
+      <nav className="flex-1 space-y-0.5">
+        {/* Navigation items */}
+        {filteredItems.length > 0 ? (
+          filteredItems.map((item) => {
+            const isActive = activeSection === item.id;
+            return (
+              <Link
+                key={item.id}
+                href={item.href}
+                onClick={(e) => handleClick(e, item.href)}
+                className={cn(
+                  "block px-3 py-2 text-sm rounded-md transition-colors",
+                  isActive
+                    ? "bg-primary text-primary-foreground font-medium"
+                    : "text-muted-foreground hover:bg-muted hover:text-foreground"
+                )}
+              >
+                {item.label}
+              </Link>
+            );
+          })
+        ) : (
+          <div className="px-3 py-2 text-sm text-muted-foreground">
+            No components found
+          </div>
         )}
-      >
-        {homeItem.label}
-      </Link>
+      </nav>
       
-      <div className="h-px bg-border my-3" />
-      
-      {/* Navigation items */}
-      {filteredItems.length > 0 ? (
-        filteredItems.map((item) => {
-          const isActive = activeSection === item.id;
-          return (
-            <Link
-              key={item.id}
-              href={item.href}
-              onClick={(e) => handleClick(e, item.href)}
-              className={cn(
-                "block px-2.5 py-1.5 text-sm rounded-md transition-colors",
-                isActive
-                  ? "bg-primary text-primary-foreground font-medium"
-                  : "text-muted-foreground hover:bg-muted hover:text-foreground"
-              )}
-            >
-              {item.label}
-            </Link>
-          );
-        })
-      ) : (
-        <div className="px-2.5 py-1.5 text-sm text-muted-foreground">
-          No components found
-        </div>
-      )}
-    </nav>
+      {/* Bottom section with border and home link - full width border */}
+      <div className="mt-auto -mx-4 px-4 pt-4 border-t border-border">
+        <Link
+          href="/"
+          className={cn(
+            "block px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted rounded-md transition-colors"
+          )}
+        >
+          ← Back to Home
+        </Link>
+      </div>
+    </div>
   );
 }
