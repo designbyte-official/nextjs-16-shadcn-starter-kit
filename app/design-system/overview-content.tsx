@@ -46,7 +46,6 @@ import {
 import Link from "next/link";
 import { ROUTES } from "@/constants/routes";
 import { CodePreview } from "@/components/common/code-preview";
-import { Button } from "@/components/ui/button";
 // Example form schema for design system
 const exampleFormSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -97,16 +96,19 @@ export default function OverviewContent() {
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-4">
-            <Card>
-              <CardHeader>
-                <CardTitle>Huge Icons - Direct Usage</CardTitle>
-                <CardDescription>
-                  Icons imported directly from the icon registry with custom
-                  sizes and colors.
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
+          <div className="space-y-6">
+            <CodePreview
+              code={`import { IconWrapper } from "@/components/common/icon-wrapper";
+import { Home01Icon, SearchIcon, UserIcon, SettingsIcon, SunIcon, MoonIcon } from "@/lib/icons";
+
+<IconWrapper icon={Home01Icon} size={24} className="text-blue-500" />
+<IconWrapper icon={SearchIcon} size={24} className="text-green-500" />
+<IconWrapper icon={UserIcon} size={24} className="text-purple-500" />
+<IconWrapper icon={SettingsIcon} size={32} className="text-orange-500" />
+<IconWrapper icon={SunIcon} size={24} className="text-yellow-500" />
+<IconWrapper icon={MoonIcon} size={24} className="text-blue-400" />`}
+              language="tsx"
+              preview={
                 <div className="flex gap-4 items-center flex-wrap">
                   <IconWrapper icon={Home01Icon} size={24} className="text-blue-500" />
                   <IconWrapper icon={SearchIcon} size={24} className="text-green-500" />
@@ -115,18 +117,21 @@ export default function OverviewContent() {
                   <IconWrapper icon={SunIcon} size={24} className="text-yellow-500" />
                   <IconWrapper icon={MoonIcon} size={24} className="text-blue-400" />
                 </div>
-              </CardContent>
-            </Card>
+              }
+            />
 
-            <Card>
-              <CardHeader>
-                <CardTitle>Huge Icons - With IconWrapper</CardTitle>
-                <CardDescription>
-                  Using IconWrapper for consistent sizing with preset size
-                  options.
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
+            <CodePreview
+              code={`import { IconWrapper } from "@/components/common/icon-wrapper";
+import { Home01Icon, SearchIcon, UserIcon, SettingsIcon, SunIcon } from "@/lib/icons";
+
+// Using preset sizes
+<IconWrapper icon={Home01Icon} size="xs" className="text-blue-500" />
+<IconWrapper icon={SearchIcon} size="sm" className="text-green-500" />
+<IconWrapper icon={UserIcon} size="md" className="text-purple-500" />
+<IconWrapper icon={SettingsIcon} size="lg" className="text-orange-500" />
+<IconWrapper icon={SunIcon} size="xl" className="text-yellow-500" />`}
+              language="tsx"
+              preview={
                 <div className="flex gap-4 items-center flex-wrap">
                   <IconWrapper
                     icon={Home01Icon}
@@ -154,34 +159,39 @@ export default function OverviewContent() {
                     className="text-yellow-500"
                   />
                 </div>
-              </CardContent>
-            </Card>
+              }
+            />
 
-            <Card>
-              <CardHeader>
-                <CardTitle>Hero Icons</CardTitle>
-                <CardDescription>
-                  Alternative icon library with &quot;Hero&quot; prefix.
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
+            <CodePreview
+              code={`import { HeroHomeIcon, HeroSearchIcon, HeroUserIcon } from "@/lib/icons";
+
+<HeroHomeIcon className="w-6 h-6 text-blue-500" />
+<HeroSearchIcon className="w-6 h-6 text-green-500" />
+<HeroUserIcon className="w-6 h-6 text-purple-500" />`}
+              language="tsx"
+              preview={
                 <div className="flex gap-4 items-center flex-wrap">
                   <HeroHomeIcon className="w-6 h-6 text-blue-500" />
                   <HeroSearchIcon className="w-6 h-6 text-green-500" />
                   <HeroUserIcon className="w-6 h-6 text-purple-500" />
                 </div>
-              </CardContent>
-            </Card>
+              }
+            />
 
-            <Card>
-              <CardHeader>
-                <CardTitle>Icon Sizes</CardTitle>
-                <CardDescription>
-                  Available preset sizes: xs (16px), sm (20px), md (24px), lg
-                  (32px), xl (40px)
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
+            <CodePreview
+              code={`import { IconWrapper } from "@/components/common/icon-wrapper";
+import { Home01Icon } from "@/lib/icons";
+
+// Available preset sizes: xs (16px), sm (20px), md (24px), lg (32px), xl (40px)
+<div className="flex gap-6 items-end">
+  <IconWrapper icon={Home01Icon} size={16} />
+  <IconWrapper icon={Home01Icon} size={20} />
+  <IconWrapper icon={Home01Icon} size={24} />
+  <IconWrapper icon={Home01Icon} size={32} />
+  <IconWrapper icon={Home01Icon} size={40} />
+</div>`}
+              language="tsx"
+              preview={
                 <div className="flex gap-6 items-end">
                   <div className="flex flex-col items-center gap-2">
                     <IconWrapper icon={Home01Icon} size={16} />
@@ -214,8 +224,8 @@ export default function OverviewContent() {
                     </span>
                   </div>
                 </div>
-              </CardContent>
-            </Card>
+              }
+            />
           </div>
         </div>
 
@@ -494,18 +504,23 @@ export default function OverviewContent() {
             <p className="text-muted-foreground">Badge component variants.</p>
           </div>
 
-          <Card>
-            <CardHeader>
-              <CardTitle>Badge Variants</CardTitle>
-            </CardHeader>
-            <CardContent>
+          <CodePreview
+            code={`import { Badge } from "@/components/ui/badge";
+
+<Badge>Default</Badge>
+<Badge variant="secondary">Secondary</Badge>
+<Badge variant="destructive">Destructive</Badge>
+<Badge variant="outline">Outline</Badge>`}
+            language="tsx"
+            preview={
               <div className="flex gap-4 flex-wrap">
-                <Badge variant="default">Default</Badge>
+                <Badge>Default</Badge>
                 <Badge variant="secondary">Secondary</Badge>
+                <Badge variant="destructive">Destructive</Badge>
                 <Badge variant="outline">Outline</Badge>
               </div>
-            </CardContent>
-          </Card>
+            }
+          />
         </div>
 
         {/* Footer Navigation */}
